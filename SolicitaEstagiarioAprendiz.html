@@ -1,0 +1,99 @@
+<html>
+
+<head>
+	<link type="text/css" rel="stylesheet" href="/style-guide/css/fluig-style-guide.min.css" />
+	<script type="text/javascript" src="/portal/resources/js/jquery/jquery.js"></script>
+	<script type="text/javascript" src="/portal/resources/js/jquery/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="/portal/resources/js/mustache/mustache-min.js"></script>
+	<script type="text/javascript" src="/style-guide/js/fluig-style-guide.min.js" charset="utf-8"></script>
+	<script type="text/javascript" src="/webdesk/vcXMLRPC.js"></script>
+	<script type="text/javascript" src="dotacaoSimples.js"></script>
+	<script type="text/javascript" src="slc_dotacaoT.js"></script>
+	<meta charset="utf-8">
+</head>
+
+<body>
+	<div class="fluig-style-guide">
+		<form name="form" role="form">
+
+			<input type="hidden" name="hdn_numSuperior" id="hdn_numSuperior">
+			<input type="hidden" name="codProjeto" id="codProjeto">
+			<input type="hidden" name="codAcao" id="codAcao">
+			<input type="hidden" name="codRecurso" id="codRecurso">
+
+			<!-- Painel de Cabeçalho -->
+			<header class="row">
+				<div class="panel panel-primary">
+					<div class="panel-heading">
+						<div align="center" class="panel-title">
+							<h1><i class="fluigicon fluigicon-desktop icon-md" aria-hidden="true"></i> Solicitação de
+								Estagiário e Menor Aprendiz</h1>
+						</div>
+					</div>
+				</div>
+			</header>
+
+			<!-- Fim do Painel -->
+
+	<!-- Painel do Requisitante -->
+
+	<div class="panel panel-primary" id="painel_req">
+		<div class="panel-heading">
+			<h3 class="panel-title"><i class="flaticon flaticon-person icon-md"
+					aria-hidden="true"></i>Dados do Requisitante</h3>
+		</div>
+
+		<div class="panel-body">
+			<div class="form-group row">
+				<div class="col-md-2" id="NomeSolicita">
+					<label for="cmb_NomeSolicitante">Nome Solicitante</label>
+					<select name="cmb_NomeSolicitante" id="cmb_NomeSolicitante" dataset="colleague"
+					datasetkey="colleagueId" datasetvalue="colleagueName" class="form-control" readonly>
+				</select>
+				</div>
+
+				<div class="col-md-2" id="GerenteSolicita">
+					<label for="cmb_GerenteSolicitante">Gerente</label>
+					<input type="text" class="form-control" name="cmb_GerenteSolicitante"
+					id="cmb_GerenteSolicitante" readonly>
+				</div>
+
+				<div class="col-md-2" id="DiretoriaSolicita">
+					<label for="hdn_diretoria">Diretoria</label>
+					<input type="text" class="form-control" name="hdn_diretoria" id="hdn_diretoria" readonly>
+				</div>
+
+			</div>
+
+			<div class="form-group row">
+				<div class="col-md-2">
+					<label for="DataHora">Data e Hora</label>
+					<input type="text" class="form-control" name="DataHora" id="DataHora" readonly>
+				</div>
+
+				<div class="col-md-2">
+					<label for="numProcesso">Numero da Solicitação</label>
+					<input type="text" class="form-control" name="numProcesso" id="numProcesso" readonly>
+				</div>
+
+				<div class="col-md-3" id="UnidadeSolicita">
+					<label for="zm_UnidadeSolicitante">Unidade Solicitante</label>
+					<input type="text" class="form-control" name="cmb_UnidadeSolicitante"
+						id="cmb_UnidadeSolicitante" readonly>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+	<!-- Fim do Painel -->
+
+
+	</div>
+	</form>
+	</div>
+</body>
+
+<script src="custom.js"></script>
+
+</html>
