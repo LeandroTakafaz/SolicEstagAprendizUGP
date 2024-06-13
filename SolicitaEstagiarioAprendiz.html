@@ -33,56 +33,123 @@
 
 			<!-- Fim do Painel -->
 
-	<!-- Painel do Requisitante -->
+			<!-- Painel do Requisitante -->
 
-	<div class="panel panel-primary" id="painel_req">
-		<div class="panel-heading">
-			<h3 class="panel-title"><i class="flaticon flaticon-person icon-md"
-					aria-hidden="true"></i>Dados do Requisitante</h3>
-		</div>
-
-		<div class="panel-body">
-			<div class="form-group row">
-				<div class="col-md-2" id="NomeSolicita">
-					<label for="cmb_NomeSolicitante">Nome Solicitante</label>
-					<select name="cmb_NomeSolicitante" id="cmb_NomeSolicitante" dataset="colleague"
-					datasetkey="colleagueId" datasetvalue="colleagueName" class="form-control" readonly>
-				</select>
+			<div class="panel panel-primary" id="painel_req">
+				<div class="panel-heading">
+					<h3 class="panel-title"><i class="flaticon flaticon-person icon-md" aria-hidden="true"></i>Dados do
+						Requisitante</h3>
 				</div>
 
-				<div class="col-md-2" id="GerenteSolicita">
-					<label for="cmb_GerenteSolicitante">Gerente/Diretor</label>
-					<input type="text" class="form-control" name="cmb_GerenteSolicitante"
-					id="cmb_GerenteSolicitante" readonly>
-				</div>
+				<div class="panel-body">
+					<div class="form-group row">
+						<div class="col-md-2" id="NomeSolicita">
+							<label for="cmb_NomeSolicitante">Nome Solicitante</label>
+							<select name="cmb_NomeSolicitante" id="cmb_NomeSolicitante" dataset="colleague"
+								datasetkey="colleagueId" datasetvalue="colleagueName" class="form-control" readonly>
+							</select>
+						</div>
 
-				<div class="col-md-2">
-					<label for="DataHora">Data e Hora</label>
-					<input type="text" class="form-control" name="DataHora" id="DataHora" readonly>
+						<div class="col-md-2" id="GerenteSolicita">
+							<label for="cmb_GerenteSolicitante">Gerente/Diretor</label>
+							<input type="text" class="form-control" name="cmb_GerenteSolicitante"
+								id="cmb_GerenteSolicitante" readonly>
+						</div>
+
+						<div class="col-md-2">
+							<label for="DataHora">Data e Hora</label>
+							<input type="text" class="form-control" name="DataHora" id="DataHora" readonly>
+						</div>
+					</div>
+
+					<div class="form-group row">
+						<div class="col-md-2">
+							<label for="numProcesso">Numero da Solicitação</label>
+							<input type="text" class="form-control" name="numProcesso" id="numProcesso" readonly>
+						</div>
+
+						<div class="col-md-3" id="UnidadeSolicita">
+							<label for="zm_UnidadeSolicitante">Unidade Solicitante</label>
+							<input type="text" class="form-control" name="cmb_UnidadeSolicitante"
+								id="cmb_UnidadeSolicitante" readonly>
+						</div>
+
+					</div>
 				</div>
 			</div>
 
-			<div class="form-group row">
-				<div class="col-md-2">
-					<label for="numProcesso">Numero da Solicitação</label>
-					<input type="text" class="form-control" name="numProcesso" id="numProcesso" readonly>
+			<!-- Fim do Painel -->
+
+			<!-- Painel de Características do Estágio -->
+
+			<div class="panel panel-primary" id="painel_req">
+				<div class="panel-heading">
+					<h3 class="panel-title"><i class="flaticon flaticon-file-awards icon-md"
+							aria-hidden="true"></i>Dados do Estágio</h3>
 				</div>
 
-				<div class="col-md-3" id="UnidadeSolicita">
-					<label for="zm_UnidadeSolicitante">Unidade Solicitante</label>
-					<input type="text" class="form-control" name="cmb_UnidadeSolicitante"
-						id="cmb_UnidadeSolicitante" readonly>
+				<div class="panel-body">
+					<div class="form-group row">
+						<div class="col-md-2">
+							<label for="graduacao">Graduação:</label>
+							<input type="text" class="form-control" name="graduacao" id="graduacao">
+						</div>
+
+						<div class="col-md-2">
+							<label for="cargaHoraria">Carga Horária:</label>
+							<select class="form-control" name="cargaHoraria" id="cargaHoraria">
+								<option value="" selected disabled>Selecione uma Opção</option>
+								<option value="seis">6 Horas</option>
+								<option value="quatro">4 Horas</option>
+							</select>
+						</div>
+
+						<div class="col-md-2">
+							<label for="curso">Cursando:</label>
+							<select class="form-control" name="TipoEnsino" id="TipoEnsino">
+								<option value="selecione" selected disabled>Selecione uma Opção</option>
+								<option value="medio">Ensino Médio</option>
+								<option value="superior">Ensino Superior</option>
+							</select>
+						</div>
+
+						<div class="col-md-1">
+							<label for="serie">Série:</label>
+							<input type="number" class="form-control" name="serie" id="serie">
+						</div>
+
+						<div class="col-md-1">
+							<label for="periodo">Período:</label>
+							<input type="number" class="form-control" name="periodo" id="periodo">
+						</div>
+
+					</div>
+					<div class="form-group row">
+						<div class="col-md-2" id="SuperSolicita">
+							<label for="supervisor">Supervisor Responsável:</label>
+							<select name="supervisor" id="supervisor" dataset="colleague" datasetkey="colleagueId"
+								datasetvalue="colleagueName" class="form-control">
+							</select>
+						</div>
+						
+						<div class="col-md-2">
+							<label for="formacao">Formação/Experiência Profissional</label>
+							<input type="text" class="form-control" name="formacao" id="formacao">
+						</div>
+
+						<div class="col-md-2">
+							<label for="vaga">Substituto ou Nova Vaga?</label>
+							<select name="vaga" id="vaga" class="form-control">
+								<option value="select" selected disabled>Selecione uma Opção</option>
+								<option value="substituido">Substituto</option>
+								<option value="novato">Nova Vaga de Estágio</option>
+							</select>
+						</div>
+					</div>
 				</div>
 
 			</div>
-		</div>
-	</div>
-
-	<!-- Fim do Painel -->
-
-
-	</div>
-	</form>
+		</form>
 	</div>
 </body>
 
