@@ -49,3 +49,37 @@ function getSuper() {
     }
 }
 window.addEventListener("load", setSuper)
+
+
+function BloquearCampos() {
+
+    var ServicoSelect = document.getElementById("TipoEnsino");
+    var serieSelect = document.getElementById("someSerie");
+    var periodoSelect = document.getElementById("somePeriodo");
+    var PainelSelect = document.getElementById("painel_integra");
+    var PainelAjuste = document.getElementById("painel_ajuste");
+
+    
+    if (ServicoSelect.value === "medio") {
+        periodoSelect.style.display = "block"; //Mostra o Campo Objetivo
+        serieSelect.style.display = "none"; //Esconde o Campo Metricas
+        PainelSelect.style.display = "none";
+        PainelAjuste.style.display = "block";
+
+    } else if (ServicoSelect.value === "superior") {
+        periodoSelect.style.display = "none";
+        serieSelect.style.display = "block";
+        PainelSelect.style.display = "block";
+        PainelAjuste.style.display = "none";
+
+    }  else if (ServicoSelect.value === "selecione"){
+        periodoSelect.style.display = "none";
+        serieSelect.style.display = "none";
+        PainelSelect.style.display = "none";
+        PainelAjuste.style.display = "none";
+    }
+}
+
+var ServicoSelect = document.getElementById("TipoEnsino");
+ServicoSelect.addEventListener("change", BloquearCampos);
+BloquearCampos();

@@ -106,7 +106,7 @@
 						</div>
 
 						<div class="col-md-2">
-							<label for="curso">Cursando:</label>
+							<label for="TipoEnsino">Cursando:</label>
 							<select class="form-control" name="TipoEnsino" id="TipoEnsino">
 								<option value="selecione" selected disabled>Selecione uma Opção</option>
 								<option value="medio">Ensino Médio</option>
@@ -114,12 +114,12 @@
 							</select>
 						</div>
 
-						<div class="col-md-1">
+						<div class="col-md-1" id="someSerie">
 							<label for="serie">Série:</label>
 							<input type="number" class="form-control" name="serie" id="serie">
 						</div>
 
-						<div class="col-md-1">
+						<div class="col-md-1" id="somePeriodo">
 							<label for="periodo">Período:</label>
 							<input type="number" class="form-control" name="periodo" id="periodo">
 						</div>
@@ -145,6 +145,13 @@
 								<option value="substituido">Substituto</option>
 								<option value="novato">Nova Vaga de Estágio</option>
 							</select>
+						</div>
+
+						<div class="col-md-2">
+							<label for="estagsub">Estagiário Substituído:</label>
+							<select name="estagsub" id="estagsub" dataset="colleague" datasetkey="colleagueId"
+							datasetvalue="colleagueName" class="form-control">
+						</select>
 						</div>
 					</div>
 				</div>
