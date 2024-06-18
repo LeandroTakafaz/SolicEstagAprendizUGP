@@ -53,33 +53,47 @@ window.addEventListener("load", setSuper)
 
 function BloquearCampos() {
 
-    var ServicoSelect = document.getElementById("TipoEnsino");
+    var EnsinoSelect = document.getElementById("tipoEnsino");
     var serieSelect = document.getElementById("someSerie");
     var periodoSelect = document.getElementById("somePeriodo");
-    var PainelSelect = document.getElementById("painel_integra");
-    var PainelAjuste = document.getElementById("painel_ajuste");
 
     
-    if (ServicoSelect.value === "medio") {
-        periodoSelect.style.display = "block"; //Mostra o Campo Objetivo
-        serieSelect.style.display = "none"; //Esconde o Campo Metricas
-        PainelSelect.style.display = "none";
-        PainelAjuste.style.display = "block";
-
-    } else if (ServicoSelect.value === "superior") {
+    if (EnsinoSelect.value === "medio") {
         periodoSelect.style.display = "none";
         serieSelect.style.display = "block";
-        PainelSelect.style.display = "block";
-        PainelAjuste.style.display = "none";
 
-    }  else if (ServicoSelect.value === "selecione"){
+    } else if (EnsinoSelect.value === "superior") {
+        periodoSelect.style.display = "block";
+        serieSelect.style.display = "none";
+
+    }  else if (EnsinoSelect.value === "selecione"){
         periodoSelect.style.display = "none";
         serieSelect.style.display = "none";
-        PainelSelect.style.display = "none";
-        PainelAjuste.style.display = "none";
     }
 }
 
-var ServicoSelect = document.getElementById("TipoEnsino");
-ServicoSelect.addEventListener("change", BloquearCampos);
+var EnsinoSelect = document.getElementById("tipoEnsino");
+EnsinoSelect.addEventListener("change", BloquearCampos);
 BloquearCampos();
+
+function SumirCampo() {
+
+    var VagaSelect = document.getElementById("vaga");
+    var EstagioSelect = document.getElementById("estagioSub");
+
+    
+    if (VagaSelect.value === "novato") {
+        EstagioSelect.style.display = "none";
+
+    } else if (VagaSelect.value === "substituido") {
+        EstagioSelect.style.display = "block";
+
+    }  else if (VagaSelect.value === "select"){
+        EstagioSelect.style.display = "none";
+
+    }
+}
+
+var VagaSelect = document.getElementById("vaga");
+VagaSelect.addEventListener("change", SumirCampo);
+SumirCampo();
