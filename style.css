@@ -6,6 +6,17 @@
     color: #fff;
 }
 
+#painel_estag {
+    color: #fff
+}
+
+#painel_cabecalho {
+    color: #fff;
+}
+
+#painel_detalhes {
+    color: #fff;
+}
 
 ::-webkit-scrollbar {
     width: 8px;
