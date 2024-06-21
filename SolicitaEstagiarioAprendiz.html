@@ -88,6 +88,58 @@
 				<div class="panel-heading" id="painel_empresa">
 					<h3 class="panel-title">Dados da Empresa</h3>
 				</div>
+
+				<div class="panel-body">
+					<div class="form-group row">
+						<div class="col-md-2">
+							<label for="empresaUnidade">Empresa / Unidade:</label>
+							<input type="text" class="form-control" name="empresaUnidade" id="empresaUnidade">
+						</div>
+
+						<div class="col-md-2">
+							<label for="cnpj">CNPJ:</label>
+							<input type="text" class="form-control" name="cnpj" id="cnpj">
+						</div>
+
+						<div class="col-md-2">
+							<label for="endereco">Endereço:</label>
+							<input type="text" class="form-control" name="endereco" id="endereco">
+						</div>
+
+						<div class="col-md-2">
+							<label for="requisitanteVaga">Requisitante da Vaga:</label>
+							<select name="requisitanteVaga" id="requisitanteVaga" dataset="colleague" datasetkey="colleagueId"
+							datasetvalue="colleagueName" class="form-control">
+						</select>
+						</div>
+
+						<div class="col-md-2">
+							<label for="cargo">Cargo:</label>
+							<input type="text" class="form-control" name="cargo" id="cargo">
+						</div>
+					</div>
+					<div class="form-group row">
+						<div class="col-md-2">
+							<label for="departamento">Departamento:</label>
+							<input type="text" class="form-control" name="departamento" id="departamento">
+						</div>
+
+						<div class="col-md-2">
+							<label for="setor">Setor:</label>
+							<input type="text" class="form-control" name="setor" id="setor">
+						</div>
+
+						<div class="col-md-3">
+							<label for="telefone">Telefone:</label>
+							<input type="number" class="form-control" name="telefone" id="telefone">
+						</div>
+
+						<div class="col-md-3">
+							<label for="email">E-mail:</label>
+							<input type="email" class="form-control" name="email" id="email">
+						</div>
+					</div>
+				</div>
 			</div>
 
 
@@ -206,7 +258,7 @@
 
 						<div class="col-md-2">
 							<label for="numVagas">Número de Vagas:</label>
-							<input type="number" name="numVagas" id="numVagas">
+							<input type="number" class="form-control" name="numVagas" id="numVagas">
 						</div>
 					</div>
 				</div>
@@ -404,4 +456,5 @@
 	</div>
 </body>
 <script src="custom.js"></script>
+
 </html>
