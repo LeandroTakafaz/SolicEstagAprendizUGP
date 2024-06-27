@@ -8,8 +8,20 @@
 	<script type="text/javascript" src="/style-guide/js/fluig-style-guide.min.js" charset="utf-8"></script>
 	<script type="text/javascript" src="/webdesk/vcXMLRPC.js"></script>
 	<meta charset="utf-8">
-	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="./style.css">
 	<script type="text/javascript" src="slc_dotacao.js"></script>
+
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+		crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
+		integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk"
+		crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js"
+		integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK"
+		crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -108,9 +120,9 @@
 
 						<div class="col-md-2">
 							<label for="requisitanteVaga">Requisitante da Vaga:</label>
-							<select name="requisitanteVaga" id="requisitanteVaga" dataset="colleague" datasetkey="colleagueId"
-							datasetvalue="colleagueName" class="form-control">
-						</select>
+							<select name="requisitanteVaga" id="requisitanteVaga" dataset="colleague"
+								datasetkey="colleagueId" datasetvalue="colleagueName" class="form-control">
+							</select>
 						</div>
 
 						<div class="col-md-2">
@@ -125,8 +137,8 @@
 						</div>
 
 						<div class="col-md-2">
-							<label for="setor">Setor:</label>
-							<input type="text" class="form-control" name="setor" id="setor">
+							<label for="setorAprendiz">Setor:</label>
+							<input type="text" class="form-control" name="setorAprendiz" id="setorAprendiz">
 						</div>
 
 						<div class="col-md-2">
@@ -158,6 +170,27 @@
 							<input type="number" class="form-control" name="salario" id="salario">
 						</div>
 
+						<div class="col-md-2">
+							<label for="sexo">Qual o requisito de sexo?</label>
+							<select class="form-control" name="sexo" id="sexo">
+								<option value="masc">Masculino</option>
+								<option value="femi">Feminino</option>
+								<option value="nemTem">Não se aplica</option>
+							</select>
+						</div>
+
+						<div class="col-md-2">
+							<label for="supervisorAprendiz">Supervisor Responsável</label>
+							<select name="supervisorAprendiz" id="supervisorAprendiz" dataset="colleague"
+								datasetkey="colleagueId" datasetvalue="colleagueName" class="form-control">
+							</select>
+						</div>
+
+						<div class="col-md-2">
+							<label for="cargoSupervisor">Cargo do Supervisor:</label>
+							<input type="text" class="form-control" name="cargoSupervisor" id="cargoSupervisor">
+						</div>
+
 						<div class="col-md-1">
 							<label for="numVagas">Nº de Vagas:</label>
 							<input type="number" class="form-control" name="numVagas" id="numVagas">
@@ -172,19 +205,42 @@
 							<label for="saidaAprendiz">Saída:</label>
 							<input type="time" class="form-control" name="saidaAprendiz" id="saidaAprendiz">
 						</div>
+					</div>
 
+					<div class="form-group row">
 						<div class="col-md-2">
-							<label for="sexo">Qual o requisito de sexo?</label>
-							<select class="form-control" name="sexo" id="sexo">
-								<option value="masc">Masculino</option>
-								<option value="femi">Feminino</option>
-								<option value="nemTem">Não se aplica</option>
-							</select>
+							<label for="localEntrevista">Local da Entrevista:</label>
+							<input type="text" class="form-control" name="localEntrevista" id="localEntrevista">
 						</div>
 
 						<div class="col-md-2">
-							<label for="idade">Qual o requisito de idade?</label>
+							<label for="pontoReferencia">Ponto de Referência:</label>
+							<input type="text" class="form-control" name="pontoReferencia" id="pontoReferencia">
+						</div>
+
+						<div class="col-md-2">
+							<label for="busca">Procurar por:</label>
+							<input type="text" class="form-control" name="busca" id="busca">
+						</div>
+
+						<div class="col-md-2">
+							<label for="setor">Setor:</label>
+							<input type="text" class="form-control" name="setor" id="setor">
+						</div>
+
+						<div class="col-md-1">
+							<label for="idade">Idade Mínima:</label>
 							<input type="text" class="form-control" name="idade" id="idade">
+						</div>
+					</div>
+					<div class="form-group row">
+						<div class="col-md-3">
+							<label for="atividade">Principais Atividades Executadas:</label>
+							<textarea class="form-control" rows="5" name="atividade" id="atividade"></textarea>
+						</div>
+						<div class="col-md-3">
+							<label for="obsAprendiz">Observações:</label>
+							<textarea class="form-control" rows="5" name="obsAprendiz" id="obsAprendiz"></textarea>
 						</div>
 					</div>
 				</div>
@@ -192,7 +248,7 @@
 
 			<!-- Fim do Painel -->
 
-			<!-- Painel de Características do Estágio -->
+			<!-- Painel da Oportunidade de Estágio -->
 
 			<div class="panel panel-default">
 				<div class="panel-heading" id="painel_estag">
@@ -203,7 +259,7 @@
 				<div class="panel-body">
 					<div class="form-group row">
 						<div class="col-md-2">
-							 <label for="graduacao">Graduação:</label>
+							<label for="graduacao">Graduação:</label>
 							<input type="text" class="form-control" name="graduacao" id="graduacao">
 						</div>
 
@@ -288,6 +344,69 @@
 						</div>
 					</div>
 				</div>
+
+				<!-- Painel da Tabela de Demanda -->
+				<div class="panel panel-default" style="display: none">
+					<div class="panel-heading">
+						<h3 class="panel-title">SolicitaÃ§Ã£o</h3>
+					</div>
+					<div class="panel-body" style="display: none">
+						<div class="form-group table-responsive">
+							<div class="table">
+								<tbody>
+									<!--<tr>
+											<td><button type="button" class="addItem" id="addItem" onclick="addItens();">Inserir SolicitaÃ§Ã£o <b>+</b></button></td>
+											
+										</tr>-->
+									<tr>
+										<td>
+											<table id="dadosItem" tablename="dadosItem" class="table table-hover"
+												noaddbutton="true" nodeletebutton="true">
+												<thead>
+													<tr>
+														<td></td>
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+														<td>
+															<span
+																class="fluig-style-guide fs-display-block fs-md-space">
+																<i type="button"
+																	class="fluigicon fluigicon-trash fluigicon-md delItem"
+																	id="delItem" name="delItem"
+																	onclick="Javascript:fnCustomDeleteItem(this);"
+																	style="cursor:pointer"></i>
+															</span>
+														</td>
+														<td>
+															<div class="form-group">
+																<label for="tipo_solicitacao">Tipo de SolicitaÃ§Ã£o
+																	<span
+																		class="Obrigatorio"><strong>*</strong></span>:</label>
+																<input class="form-control" name="tipo_solicitacao"
+																	id="tipo_solicitacao">
+
+															</div>
+														</td>
+														<td>
+															<div class="form-group">
+																<label for="detalhes">Detalhes da SolicitaÃ§Ã£o</label>
+																<textarea rows=2 name="detalhe" id="detalhe"
+																	class="form-control"></textarea>
+															</div>
+														</td>
+													</tr>
+												</tbody>
+											</table>
+										</td>
+									</tr>
+								</tbody>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- Fim do Painel -->
 			</div>
 
 			<!-- Fim do Painel -->
@@ -300,6 +419,65 @@
 				</div>
 
 				<div class="panel-body">
+					<div class="table-responsive">
+						<div class="table">
+							<thead>
+							</thead>
+							<tbody>
+								<tr>
+									<td>
+										<div class="col-md-3">
+											<div class="form-group" id="input1">
+											</div>
+										</div>
+										<div class="col-md-4">
+											<div class="form-group" id="input2">
+											</div>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<div class="col-md-2">
+											<div class="form-group row">
+												<div class="bs-docs-popover-hover">
+													<br>
+													<button type="button" class="btn btn-primary"
+														data-comp-show-modal="small" id="addItem"
+														onclick="adicionarItem();">Inserir Demanda
+														<b>+</b></button>
+												</div>
+
+											</div>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<div class="col-md-7">
+											<table
+												class="table table-bordered table-striped table-hover certa"
+												noaddbutton="true" nodeletebutton="true">
+												<thead>
+													<tr>
+														<td class="col-md-3">Serviços
+														</td>
+														<td class="col-md-6">Detalhes</td>
+														<td class="col-md-1">Remove</td>
+													</tr>
+												</thead>
+
+												<tbody>
+												</tbody>
+
+											</table>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</div>
+					</div>
+
 					<div class="table-responsive">
 						<table class="table">
 							<thead>
@@ -484,5 +662,5 @@
 	</div>
 </body>
 <script src="custom.js"></script>
-
+<script src="tabela.js"></script>
 </html>
