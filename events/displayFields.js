@@ -1,5 +1,4 @@
 function displayFields(form,customHTML){
-
     var Now_State = parseInt(getValue("WKNumState"));
     var NumProcesso = getValue("WKNumProces");
     var usuario = getValue("WKUser");
@@ -14,6 +13,11 @@ function displayFields(form,customHTML){
             form.setEnabled("dt_DataSolicit",false);
 
         break;
-    }
 
-}
+        case 10:
+            form.setValue("txt_NumProc",NumProcesso);
+        break;      
+
+        default:
+    }
+ }

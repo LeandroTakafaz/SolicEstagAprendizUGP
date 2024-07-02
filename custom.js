@@ -1,3 +1,16 @@
+function matriculaResp() {
+    var nome = document.getElementById('respDemanda').value
+    var ds_mat = DatasetFactory.getDataset("colleague", null, null, null);
+    console.log("TROCOU")
+    for (var i = 0; i < ds_mat.values.length; i++) {
+        console.log("COMPAROU")
+        if (ds_mat.values[i]['colleagueName'] == nome) {
+            console.log("ACHOU")
+            document.getElementById('matriculaResponsavel').value = ds_mat.values[i]['colleaguePK.colleagueId']
+        }
+    }
+}
+
 function unidade() {
     var ds_mat = DatasetFactory.getDataset("colleague", null, null, null);
     var ds_und = DatasetFactory.getDataset("dsc_Unidades", null, null, null);
@@ -13,10 +26,10 @@ function unidade() {
                     console.log(ds_und.values[j]['Sigla'])
                     document.getElementById("cmb_GerenteSolicitante").value = ds_und.values[j]['NomeGerente']
                     document.getElementById("cmb_UnidadeSolicitante").value = ds_und.values[j]['NomeUnidade']
-                    document.getElementById("numSuperior").value = ds_und.values[j]['Matricula']
+                    document.getElementById("hdn_numSuperior").value = ds_und.values[j]['Matricula']
                     if (mat == document.getElementById("numSuperior").value) {
                         document.getElementById("cmb_GerenteSolicitante").value = ds_und.values[j]['NomeSuperior']
-                        document.getElementById("numSuperior").value = ds_und.values[j]['MatSuperior']
+                        document.getElementById("hdn_numSuperior").value = ds_und.values[j]['MatSuperior']
                     }
                 }
             }
@@ -24,6 +37,7 @@ function unidade() {
     }
 }
 window.addEventListener("load", unidade);
+
 
 function setSuper() {
     document.getElementById("cmb_GerenteSolicitante").onchange = function () { getSuper() }
