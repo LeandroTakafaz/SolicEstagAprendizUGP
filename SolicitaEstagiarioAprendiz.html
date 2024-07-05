@@ -78,6 +78,15 @@
 
 					<div class="form-group row">
 						<div class="col-md-2">
+							<label for="estiloVaga">Será Qual tipo de Contrato?</label>
+							<select name="estiloVaga" class="form-control" id="estiloVaga">
+								<option value="0" selected disabled>Selecione uma Opção</option>
+								<option value="1">Estágio</option>
+								<option value="2">Menor Aprendiz</option>
+							</select>
+						</div>
+
+						<div class="col-md-2">
 							<label for="numProcesso">Numero da Solicitação</label>
 							<input type="text" class="form-control" name="numProcesso" id="numProcesso" readonly>
 						</div>
@@ -94,9 +103,31 @@
 
 			<!-- Fim do Painel -->
 
-			<!-- Painel de Dados da Empresa -->
+
+
+			<!-- Painel das Requisições
 
 			<div class="panel panel-default">
+				<div class="panel-heading" id="painel_requisicoes">
+					<h3 class="panel-title">Requisições da Vaga</h3>
+				</div>
+				
+				<div class="panel-body">
+					<div class="form-group row">
+						<div class="col-md-2">
+							<label for=""></label>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Fim do Painel -->
+
+
+
+			<!-- Painel de Dados da Empresa -->
+
+			<div class="panel panel-default" id="somePainelEmp">
 				<div class="panel-heading" id="painel_empresa">
 					<h3 class="panel-title"><i class="flaticon flaticon-desktop-list icon-md" aria-hidden="true"></i>
 						Dados da Empresa</h3>
@@ -159,7 +190,7 @@
 
 			<!-- Painel de Dados do Jovem Aprendiz -->
 
-			<div class="panel panel-default">
+			<div class="panel panel-default" id="somePainelJov">
 				<div class="panel-heading" id="painel_jovem">
 					<h3 class="panel-title">Dados da Oportunidade de Jovem Aprendiz</h3>
 				</div>
@@ -174,6 +205,7 @@
 						<div class="col-md-2">
 							<label for="sexo">Qual o requisito de sexo?</label>
 							<select class="form-control" name="sexo" id="sexo">
+								<option value="selec" selected disabled>Selecione uma Opção</option>
 								<option value="masc">Masculino</option>
 								<option value="femi">Feminino</option>
 								<option value="nemTem">Não se aplica</option>
@@ -251,7 +283,7 @@
 
 			<!-- Painel da Oportunidade de Estágio -->
 
-			<div class="panel panel-default">
+			<div class="panel panel-default" id="somePainelEstag">
 				<div class="panel-heading" id="painel_estag">
 					<h3 class="panel-title"><i class="flaticon flaticon-file-awards icon-md"
 							aria-hidden="true"></i>Dados da Oportunidade de Estágio</h3>
@@ -307,7 +339,7 @@
 						<div class="col-md-2" id="SuperSolicita">
 							<label for="supervisor">Supervisor Responsável:</label>
 							<select name="supervisor" id="supervisor" dataset="colleague" datasetkey="colleagueId"
-								datasetvalue="colleagueName" class="form-control"> 
+								datasetvalue="colleagueName" class="form-control">
 							</select>
 						</div>
 
@@ -414,12 +446,24 @@
 
 			<!-- Painel Detalhes da Demanda -->
 
-			<div class="panel panel-default">
+			<div class="panel panel-default" id="somePainelDetalhes">
 				<div class="panel-heading" id="painel_detalhes">
-					<h3 class="panel-title"><i class="flaticon flaticon-add-box icon-md" aria-hidden="true"></i> Detalhes da Demanda</h3>
+					<h3 class="panel-title"><i class="flaticon flaticon-add-box icon-md" aria-hidden="true"></i>
+						Detalhes da Demanda</h3>
 				</div>
 
 				<div class="panel-body">
+					<div class="form-group row">
+						<div class="col-md-2">
+							<label for="disponivel">Possui Candidatos no Banco de Talentos?</label>
+							<select name="disponivel" class="form-control" id="disponivel">
+								<option value="" selected disabled>Selecione uma Opção</option>
+								<option value="1">Sim</option>
+								<option value="2">Não</option>
+							</select>
+						</div>
+					</div>
+
 					<div class="table-responsive">
 						<div class="table">
 							<thead>
@@ -445,7 +489,7 @@
 													<br>
 													<button type="button" class="btn btn-default"
 														data-comp-show-modal="small" id="addItem"
-														onclick="adicionarItem();">Inserir Demanda
+														onclick="adicionarItem();">Inserir Entrevista
 														<b>+</b></button>
 												</div>
 
@@ -456,8 +500,7 @@
 								<tr>
 									<td>
 										<div class="col-md-7">
-											<table
-												class="table table-bordered table-striped table-hover certa"
+											<table class="table table-bordered table-striped table-hover certa"
 												noaddbutton="true" nodeletebutton="true">
 												<thead>
 													<tr>
@@ -664,4 +707,5 @@
 </body>
 <script src="custom.js"></script>
 <script src="tabela.js"></script>
+
 </html>

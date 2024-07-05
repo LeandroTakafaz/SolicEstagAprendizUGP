@@ -312,3 +312,37 @@ $(document).ready(function () {
         $(this).tab('show');
     });
 });
+
+
+function SumirPainel() {
+
+    var VagaSelect = document.getElementById("estiloVaga");
+    var jovemSelect = document.getElementById("somePainelJov");
+    var empSelect = document.getElementById("somePainelEmp");
+    var estagSelect = document.getElementById("somePainelEstag");
+    var detalSelect = document.getElementById("somePainelDetalhes");
+
+    
+    if (VagaSelect.value === "0") {
+        jovemSelect.style.display = "none";
+        empSelect.style.display = "none";
+        estagSelect.style.display = "none";
+        detalSelect.style.display = "none";
+
+    } else if (VagaSelect.value === "1") {
+        jovemSelect.style.display = "none";
+        empSelect.style.display = "none";
+        estagSelect.style.display = "block";
+        detalSelect.style.display = "block";
+
+    }  else if (VagaSelect.value === "2"){
+        jovemSelect.style.display = "block";
+        empSelect.style.display = "block";
+        estagSelect.style.display = "none";
+        detalSelect.style.display = "block";
+    }
+}
+
+var VagaSelect = document.getElementById("estiloVaga");
+VagaSelect.addEventListener("change", SumirPainel);
+SumirPainel();

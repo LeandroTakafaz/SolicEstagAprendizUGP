@@ -3,11 +3,11 @@
 }
 
 #painel_req {
-    color: #fff;
+    color: #f4f4f4;
 }
 
 #painel_estag {
-    color: #fff
+    color: #f4f4f4
 }
 
 #addRateio {
@@ -19,19 +19,19 @@
 }
 
 #painel_cabecalho {
-    color: #fff;
+    color: #f4f4f4;
 }
 
 #painel_empresa {
-    color: #fff;
+    color: #f4f4f4;
 }
 
 #painel_jovem {
-    color: #fff;
+    color: #f4f4f4;
 }
 
 #painel_detalhes {
-    color: #fff;
+    color: #f4f4f4;
 }
 
 ::-webkit-scrollbar {
