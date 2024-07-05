@@ -8,5 +8,10 @@ function validateForm(form){
         return date;
     }
 
-    
+    if(Now == 0 || Now == 4)  {
+		if(form.getValue("estiloVaga") == "Selecione uma Opção") {
+			errors.push("Campo Tipo de Contrato não foi preenchido")
+		}
+    }
+
 }
