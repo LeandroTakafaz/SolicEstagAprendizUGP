@@ -71,8 +71,8 @@
 						</div>
 
 						<div class="col-md-2">
-							<label for="DataHora">Data e Hora</label>
-							<input type="text" class="form-control" name="DataHora" id="DataHora" readonly>
+							<label for="numProcesso">Numero da Solicitação</label>
+							<input type="text" class="form-control" name="numProcesso" id="numProcesso" readonly>
 						</div>
 					</div>
 
@@ -87,8 +87,12 @@
 						</div>
 
 						<div class="col-md-2">
-							<label for="numProcesso">Numero da Solicitação</label>
-							<input type="text" class="form-control" name="numProcesso" id="numProcesso" readonly>
+							<label for="vaga">Substituto ou Nova Vaga?</label>
+							<select name="vaga" id="vaga" class="form-control">
+								<option value="select" selected disabled>Selecione uma Opção</option>
+								<option value="1">Substituto</option>
+								<option value="2">Nova Vaga de Estágio</option>
+							</select>
 						</div>
 
 						<div class="col-md-3" id="UnidadeSolicita">
@@ -346,15 +350,6 @@
 						<div class="col-md-2">
 							<label for="formacao">Formação/Experiência Profissional</label>
 							<input type="text" class="form-control" name="formacao" id="formacao">
-						</div>
-
-						<div class="col-md-2">
-							<label for="vaga">Substituto ou Nova Vaga?</label>
-							<select name="vaga" id="vaga" class="form-control">
-								<option value="select" selected disabled>Selecione uma Opção</option>
-								<option value="1">Substituto</option>
-								<option value="2">Nova Vaga de Estágio</option>
-							</select>
 						</div>
 
 						<div class="col-md-2" id="estagioSub">

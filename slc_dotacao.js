@@ -265,7 +265,7 @@ function slcProjeto(linha) {
         att = document.createAttribute('readonly')
         vselect.setAttributeNode(att)
     }
-    else if (Now == 5 || Now == 10 || Now == 24 || Now == 38 || Now == 43 || Now == 45 || Now == 78 || Now == 85 || Now == 89 || Now == 109) {
+    else if (Now == 7 || Now == 12 || Now == 15 || Now == 27 || Now == 31 || Now == 33 || Now == 35 || Now == 57 || Now == 64 || Now == 68 || Now == 70 || Now == 74 || Now == 78 || Now == 80) {
         att = document.createAttribute('readonly')
         vselect.setAttributeNode(att)
     }
@@ -377,7 +377,7 @@ function slcAcao(linha) {
         att = document.createAttribute('readonly')
         vselect.setAttributeNode(att)
     }
-    else if (Now == 5 || Now == 10 || Now == 24 || Now == 38 || Now == 43 || Now == 45 || Now == 78  || Now == 85 || Now == 89 || Now == 109)  {
+    else if (Now == 7 || Now == 12 || Now == 15 || Now == 27 || Now == 31 || Now == 33 || Now == 35 || Now == 57 || Now == 64 || Now == 68 || Now == 70 || Now == 74 || Now == 78 || Now == 80)  {
         att = document.createAttribute('readonly')
         vselect.setAttributeNode(att)
     }
@@ -492,7 +492,7 @@ function slcUnidade(linha) {
         att = document.createAttribute('readonly')
         vselect.setAttributeNode(att)
     }
-    else if (Now == 5 || Now == 10 || Now == 24 || Now == 38 || Now == 43 || Now == 45 || Now == 78 || Now == 85 || Now == 89 || Now == 109) {
+    else if (Now == 7 || Now == 12 || Now == 15 || Now == 27 || Now == 31 || Now == 33 || Now == 35 || Now == 57 || Now == 64 || Now == 68 || Now == 70 || Now == 74 || Now == 78 || Now == 80) {
         att = document.createAttribute('readonly')
         vselect.setAttributeNode(att)
     }

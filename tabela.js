@@ -297,7 +297,7 @@ function validatePanel() {
     var Now = window.parent.ECM.workflowView.sequence
     var visualizacao = window.parentOBJ.ECM.workflowView.stateDescription
     console.log(visualizacao)
-    if (Now == 5 || Now == 10 || Now == 24 || Now == 38 || Now == 43) {
+    if (Now == 7 || Now == 12 || Now == 15 || Now == 27 || Now == 31 || Now == 33 || Now == 35 || Now == 57 || Now == 64 || Now == 68 || Now == 70 || Now == 74 || Now == 78 || Now == 80) {
         //console.log(document.getElementById('addItem'))
         document.getElementById('addItem').style.display = 'none'
         returnTable();
