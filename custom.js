@@ -97,11 +97,11 @@ function SumirCampo() {
     var dataSelect = document.getElementById("dataSaida");
 
     
-    if (VagaSelect.value === "novato") {
+    if (VagaSelect.value === "1") {
         EstagioSelect.style.display = "none";
         dataSelect.style.display = "none";
 
-    } else if (VagaSelect.value === "substituido") {
+    } else if (VagaSelect.value === "2") {
         EstagioSelect.style.display = "block";
         dataSelect.style.display = "block";
 

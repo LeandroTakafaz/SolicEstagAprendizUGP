@@ -14,8 +14,18 @@
     background-color: #00df89;
 }
 
+#addRateio:hover {
+    background-color: #d8d8d8;
+    color: #1b1d1c;
+}
+
 #addItem {
     background-color: #00df89;
+}
+
+#addItem:hover {
+    background-color: #d8d8d8;
+    color: #1b1d1c;
 }
 
 #painel_cabecalho {
