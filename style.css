@@ -12,20 +12,26 @@
 
 #addRateio {
     background-color: #00df89;
+    box-shadow: 0px 0px 15px rgba(22, 21, 21, 0.356);
+    transition: transform 0.3s ease;
 }
 
 #addRateio:hover {
-    background-color: #d8d8d8;
+    background-color: #0fbd7a;
     color: #1b1d1c;
+    transform: scale(1.1);
 }
 
 #addItem {
     background-color: #00df89;
+    box-shadow: 0px 0px 15px rgba(22, 21, 21, 0.356);
+    transition: transform 0.3s ease;
 }
 
 #addItem:hover {
-    background-color: #d8d8d8;
+    background-color: #0fbd7a;
     color: #1b1d1c;
+    transform: scale(1.1);
 }
 
 #painel_cabecalho {
