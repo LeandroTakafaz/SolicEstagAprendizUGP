@@ -14,10 +14,10 @@
     }
     if (form.getValue("vaga") == "select") {
       errors.push("Campo 'Possui Candidatos Prévios?' não foi preenchido")
-    } */
-    /* Painel de Dados da Empresa */
+    }
+    // Painel de Dados da Empresa
 
-    /* if (form.getValue("estiloVaga") == "2" && form.getValue("empresaUnidade") == "") {
+    if (form.getValue("estiloVaga") == "2" && form.getValue("empresaUnidade") == "") {
       errors.push("Campo 'Empresa / Unidade' não foi preenchido")
     }
     if (form.getValue("estiloVaga") == "2" && form.getValue("cnpj") == "") {
@@ -43,11 +43,12 @@
     }
     if (form.getValue("estiloVaga") == "2" && form.getValue("email") == "") {
       errors.push("Campo 'E-mail' não foi preenchido")
-    } */
-    /* Fim do Painel */
+    } 
+    // Fim do Painel 
 
-    /* Painel de Dados do Menor Aprendiz */
-   /*  if (form.getValue("estiloVaga") == "2" && form.getValue("salario") == "") {
+    // Painel de Dados do Menor Aprendiz
+
+    if (form.getValue("estiloVaga") == "2" && form.getValue("salario") == "") {
       errors.push("Campo 'Qual será o Salário?' não foi preenchido")
     }
     if (form.getValue("estiloVaga") == "2" && form.getValue("sexo") == "selec") {
@@ -88,12 +89,13 @@
     }
     if (form.getValue("estiloVaga") == "2" && form.getValue("obsAprendiz") == "") {
       errors.push("Campo 'Observações' não foi preenchido")
-    } */
-    /* Fim do Painel */
+    } 
 
-    /* Painel de Dados do Estagiário */
-    
-   /*  if (form.getValue("estiloVaga") == "1" && form.getValue("graduacao") == "") {
+    // Fim do Painel 
+
+    // Painel de Dados do Estagiário
+   
+    if (form.getValue("estiloVaga") == "1" && form.getValue("graduacao") == "") {
       errors.push("Campo 'Graduação' não foi preenchido")
     }
     if (form.getValue("estiloVaga") == "1" && form.getValue("cargaHoraria") == "") {
@@ -128,9 +130,9 @@
     }
     if (form.getValue("estiloVaga") == "1" && form.getValue("Detalhes") == "") {
       errors.push("Campo 'Atividades a Serem Desenvolvidas no Estágio' não foi preenchido")
-    } */
-    /* Fim do Painel */
-  /* }
+    } 
+   }
+       // Fim do Painel 
 
   if (errors.length > 0) {
     throw errors.join("\n");

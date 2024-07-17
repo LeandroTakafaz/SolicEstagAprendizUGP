@@ -346,3 +346,27 @@ function SumirPainel() {
 var VagaSelect = document.getElementById("estiloVaga");
 VagaSelect.addEventListener("change", SumirPainel);
 SumirPainel();
+
+/* function loadCSS(filename) { 
+
+    var file = document.createElement("link");
+    file.setAttribute("rel", "stylesheet");
+    file.setAttribute("type", "text/css");
+    file.setAttribute("href", filename);
+ 
+    document.head.appendChild(file);
+ 
+ }
+ 
+ // Carregar seu arquivo CSS após a página ter sido carregada
+ window.onload = function() {
+    loadCSS("seu_arquivo.css");
+ }; */
+
+ window.onload = function() {
+    setInterval(alterarBotao, 1000); // Altera a cor do botão a cada 1 segundo
+}
+
+function alterarBotao() {
+    document.getElementById("send-process-button").style.backgroundColor = "#00df89";
+}
