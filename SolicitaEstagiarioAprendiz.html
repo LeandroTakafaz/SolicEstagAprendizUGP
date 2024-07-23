@@ -9,19 +9,9 @@
 	<script type="text/javascript" src="/webdesk/vcXMLRPC.js"></script>
 	<meta charset="utf-8">
 	<link rel="stylesheet" href="./style.css">
+	<script async src="custom.js"></script>
+	<script async src="tabela.js"></script>
 	<script type="text/javascript" src="slc_dotacao.js"></script>
-
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
-		integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
-		integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
-		crossorigin="anonymous"></script>
-	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
-		integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk"
-		crossorigin="anonymous"></script>
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js"
-		integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK"
-		crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -49,7 +39,7 @@
 
 			<!-- Painel do Requisitante -->
 
-			<div class="panel panel-default">
+			<div class="panel panel-default" id="somePainelReq">
 				<div class="panel-heading" id="painel_req">
 					<h3 class="panel-title"><i class="flaticon flaticon-person icon-md" aria-hidden="true"></i>Dados do
 						Requisitante</h3>
@@ -73,6 +63,16 @@
 						<div class="col-md-2">
 							<label for="numProcesso">Numero da Solicitação</label>
 							<input type="text" class="form-control" name="numProcesso" id="numProcesso" readonly>
+						</div>
+
+						<div class="col-md-3">
+							<label for="mail">Email da IEL</label>
+							<input type="text" class="form-control" name="mail" id="mail">
+						</div>
+
+						<div class="col-md-3">
+							<label for="linkPublicForm">LINK DO PUBLIC FORM</label>
+							<input type="text" class="form-control" name="linkPublicForm" id="linkPublicForm">
 						</div>
 					</div>
 
@@ -100,7 +100,6 @@
 							<input type="text" class="form-control" name="cmb_UnidadeSolicitante"
 								id="cmb_UnidadeSolicitante" readonly>
 						</div>
-
 					</div>
 				</div>
 			</div>
@@ -161,8 +160,8 @@
 						</div>
 
 						<div class="col-md-3">
-							<label for="email">E-mail:</label>
-							<input type="email" class="form-control" name="email" id="email">
+							<label for="emailEmp">E-mail:</label>
+							<input type="email" class="form-control" name="emailEmp" id="emailEmp">
 						</div>
 					</div>
 				</div>
@@ -299,7 +298,7 @@
 
 						<div class="col-md-2">
 							<label for="tipoEnsino">Cursando:</label>
-							<select class="form-control" name="tipoEnsino" id="tipoEnsino">
+							<select class="form-control" name="typeEnsino" id="typeEnsino">
 								<option value="selecione" selected disabled>Selecione uma Opção</option>
 								<option value="medio">Ensino Médio</option>
 								<option value="superior">Ensino Superior</option>
@@ -695,7 +694,91 @@
 		</form>
 	</div>
 </body>
-<script src="custom.js"></script>
-<script src="tabela.js"></script>
-<script type="text/javascript" src="ocult.js"></script>
+
+<script>
+	function painelHide() {
+		var panel = ["painel_cabecalho", "somePainelReq", "somePainelEmp", "somePainelEstag", "somePainelJov", "somePainelDetalhes"];
+
+		if (parent.WCMAPI.getUserLogin() == null) {
+			for (var i = 0; i < panel.length; i++) {
+				if (i == 0 || i == 5) {
+				document.getElementById(panel[i]).style.display = 'none';
+				}
+			}
+		}
+	}
+	painelHide();
+</script>
+
+<style>
+	.panel-heading {
+		background: linear-gradient(to right, #00df89, #00df89);
+	}
+	
+	#painel_req {
+		color: #f4f4f4;
+	}
+	
+	#painel_estag {
+		color: #f4f4f4
+	}
+	
+	#addRateio {
+		background-color: #00df89;
+		box-shadow: 0px 0px 15px rgba(22, 21, 21, 0.356);
+		transition: transform 0.3s ease;
+	}
+	
+	#addRateio:hover {
+		background-color: #0fbd7a;
+		color: #1b1d1c;
+		transform: scale(1.1);
+	}
+	
+	#addItem {
+		background-color: #00df89;
+		box-shadow: 0px 0px 15px rgba(22, 21, 21, 0.356);
+		transition: transform 0.3s ease;
+	}
+	
+	#addItem:hover {
+		background-color: #0fbd7a;
+		color: #1b1d1c;
+		transform: scale(1.1);
+	}
+	
+	#painel_cabecalho {
+		color: #f4f4f4;
+	}
+	
+	#painel_empresa {
+		color: #f4f4f4;
+	}
+	
+	#painel_jovem {
+		color: #f4f4f4;
+	}
+	
+	#painel_detalhes {
+		color: #f4f4f4;
+	}
+	
+	::-webkit-scrollbar {
+		width: 8px;
+		height: 8px;
+	}
+	
+	::-webkit-scrollbar-track {
+		background: #f1f1f1;
+	}
+	
+	::-webkit-scrollbar-thumb {
+		background: #888;
+		border-radius: 10px;
+	}
+	
+	::-webkit-scrollbar-thumb:hover {
+		background: #555;
+	}
+</style>
 </html>

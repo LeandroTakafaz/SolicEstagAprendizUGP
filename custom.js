@@ -67,7 +67,7 @@ window.addEventListener("load", setSuper)
 
 function BloquearCampos() {
 
-    var EnsinoSelect = document.getElementById("tipoEnsino");
+    var EnsinoSelect = document.getElementById("typeEnsino");
     var serieSelect = document.getElementById("someSerie");
     var periodoSelect = document.getElementById("somePeriodo");
 
@@ -86,7 +86,7 @@ function BloquearCampos() {
     }
 }
 
-var EnsinoSelect = document.getElementById("tipoEnsino");
+var EnsinoSelect = document.getElementById("typeEnsino");
 EnsinoSelect.addEventListener("change", BloquearCampos);
 BloquearCampos();
 
@@ -355,18 +355,8 @@ SumirPainel();
     file.setAttribute("href", filename);
  
     document.head.appendChild(file);
- 
  }
  
- // Carregar seu arquivo CSS após a página ter sido carregada
  window.onload = function() {
     loadCSS("seu_arquivo.css");
  }; */
-
- window.onload = function() {
-    setInterval(alterarBotao, 1000); // Altera a cor do botão a cada 1 segundo
-}
-
-function alterarBotao() {
-    document.getElementById("send-process-button").style.backgroundColor = "#00df89";
-}
