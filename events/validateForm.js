@@ -132,7 +132,7 @@
       errors.push("Campo 'Atividades a Serem Desenvolvidas no Estágio' não foi preenchido")
     } 
    }
-       // Fim do Painel 
+       // Fim do Painel
 
   if (errors.length > 0) {
     throw errors.join("\n");

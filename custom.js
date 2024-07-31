@@ -97,11 +97,11 @@ function SumirCampo() {
     var dataSelect = document.getElementById("dataSaida");
 
     
-    if (VagaSelect.value === "1") {
+    if (VagaSelect.value === "2") {
         EstagioSelect.style.display = "none";
         dataSelect.style.display = "none";
 
-    } else if (VagaSelect.value === "2") {
+    } else if (VagaSelect.value === "1") {
         EstagioSelect.style.display = "block";
         dataSelect.style.display = "block";
 
@@ -327,19 +327,16 @@ function SumirPainel() {
         jovemSelect.style.display = "none";
         empSelect.style.display = "none";
         estagSelect.style.display = "none";
-        detalSelect.style.display = "none";
 
     } else if (VagaSelect.value === "1") {
         jovemSelect.style.display = "none";
         empSelect.style.display = "none";
         estagSelect.style.display = "block";
-        detalSelect.style.display = "block";
 
     }  else if (VagaSelect.value === "2"){
         jovemSelect.style.display = "block";
         empSelect.style.display = "block";
         estagSelect.style.display = "none";
-        detalSelect.style.display = "block";
     }
 }
 
