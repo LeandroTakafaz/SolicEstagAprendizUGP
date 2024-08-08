@@ -21,7 +21,7 @@ function displayFields(form,customHTML){
         default:
     }
 
-    if (Now == 0 || Now == 4 || Now == 7 || Now == 12 || Now == 15 || Now == 27 || Now == 31 || Now == 33 || Now == 35 || Now == 57 || Now == 68 || Now == 70 || Now == 74 || Now == 78 || Now == 80) {
+    if (Now == 0 || Now == 4 || Now == 7 || Now == 12 || Now == 15 || Now == 31 || Now == 33 || Now == 35 || Now == 57 || Now == 68 || Now == 70 || Now == 74 || Now == 78 || Now == 80) {
         form.setVisibleById("disp", false);
         form.setVisibleById("aprov", false);
         form.setVisibleById("stats", false);
@@ -44,8 +44,12 @@ function displayFields(form,customHTML){
 
 
     /* Painel de Detalhes da Solicitação */
-    if (Now == 0 || Now == 4 || Now == 7 || Now == 12 || Now == 15 || Now == 31 || Now == 33 || Now == 35 || Now == 68 || Now == 70 || Now == 74 || Now == 78 || Now == 80) {
+/*     if (Now == 0 || Now == 4 || Now == 7 || Now == 12 || Now == 15 || Now == 27 || Now == 31 || Now == 33 || Now == 35 || Now == 68 || Now == 70 || Now == 74 || Now == 78 || Now == 80) {
         form.setVisibleById("somePainelDetalhes", false);
+    } */
+
+    if (Now == 33) {
+        form.setVisibleById("some", false);
     }
 
  }

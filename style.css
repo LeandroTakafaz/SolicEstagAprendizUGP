@@ -11,26 +11,30 @@
 }
 
 #addRateio {
-    background-color: #00df89;
-    box-shadow: 0px 0px 15px rgba(22, 21, 21, 0.356);
+    border: 2px solid #00df89;
+    background-color: #fff;
+    color: #00df89;
     transition: transform 0.3s ease;
 }
 
 #addRateio:hover {
+    border: 2px solid #0fbd7a;
     background-color: #0fbd7a;
-    color: #1b1d1c;
+    color: #fff;
     transform: scale(1.1);
 }
 
 #addItem {
-    background-color: #00df89;
-    box-shadow: 0px 0px 15px rgba(22, 21, 21, 0.356);
+    border: 2px solid #00df89;
+    background-color: #fff;
+    color: #00df89;
     transition: transform 0.3s ease;
 }
 
 #addItem:hover {
+    border: 2px solid #0fbd7a;
     background-color: #0fbd7a;
-    color: #1b1d1c;
+    color: #fff;
     transform: scale(1.1);
 }
 

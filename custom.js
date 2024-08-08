@@ -367,7 +367,7 @@ SumirPainel();
       new Date(dataAtual.getFullYear(), 4, 2),
       new Date(dataAtual.getFullYear(), 5, 4),
       new Date(dataAtual.getFullYear(), 6, 4),
-      new Date(dataAtual.getFullYear(), 7, 2),
+      new Date(dataAtual.getFullYear(), 7, 8),
       new Date(dataAtual.getFullYear(), 8, 3),
       new Date(dataAtual.getFullYear(), 10, 2),
       new Date(dataAtual.getFullYear(), 11, 5),
@@ -384,24 +384,9 @@ SumirPainel();
         return;
       }
     });
-  
+
     apagaTudo.style.display = mostrarApagaTudo ? "block" : "none";
     card.style.display = mostrarApagaTudo ? "none" : "block";
   }
 
   window.onload = verificarDataEvento;
-  
-
-/* 
-new Date(dataAtual.getFullYear(), 0, 5),
-new Date(dataAtual.getFullYear(), 1, 2),
-new Date(dataAtual.getFullYear(), 2, 1),
-new Date(dataAtual.getFullYear(), 3, 2),
-new Date(dataAtual.getFullYear(), 4, 2),
-new Date(dataAtual.getFullYear(), 5, 4),
-new Date(dataAtual.getFullYear(), 6, 4),
-new Date(dataAtual.getFullYear(), 7, 2),
-new Date(dataAtual.getFullYear(), 8, 3),
-new Date(dataAtual.getFullYear(), 10, 2),
-new Date(dataAtual.getFullYear(), 11, 5),
-new Date(dataAtual.getFullYear(), 11, 5) */

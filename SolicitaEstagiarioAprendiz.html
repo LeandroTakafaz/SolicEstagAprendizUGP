@@ -7,10 +7,10 @@
 	<script type="text/javascript" src="/portal/resources/js/mustache/mustache-min.js"></script>
 	<script type="text/javascript" src="/style-guide/js/fluig-style-guide.min.js" charset="utf-8"></script>
 	<script type="text/javascript" src="/webdesk/vcXMLRPC.js"></script>
-	<meta charset="utf-8">
-	<link rel="stylesheet" href="./style.css">
 	<script async src="custom.js"></script>
 	<script async src="tabela.js"></script>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="./style.css">
 	<script type="text/javascript" src="slc_dotacao.js"></script>
 </head>
 
@@ -21,353 +21,540 @@
 			<input type="hidden" name="hdn_numSuperior" id="hdn_numSuperior">
 
 			<!-- Painel de Cabeçalho -->
-		<div id="amostradinho">	 
-			<header class="row">
-				<div class="panel panel-default" id="somePainelCabeça">
-					<div class="panel-heading" id="painel_cabecalho">
-						<div align="center" class="panel-title">
-							<h1><i class="fluigicon fluigicon-desktop icon-md" aria-hidden="true"></i> Solicitação de
-								Estagiário e Menor Aprendiz</h1>
+			<div id="amostradinho">
+				<header class="row">
+					<div class="panel panel-default" id="somePainelCabeça">
+						<div class="panel-heading" id="painel_cabecalho">
+							<div align="center" class="panel-title">
+								<h1><i class="fluigicon fluigicon-desktop icon-md" aria-hidden="true"></i> Solicitação
+									de
+									Estagiário e Menor Aprendiz</h1>
+							</div>
 						</div>
 					</div>
-				</div>
-			</header>
+				</header>
 
-			<!-- Fim do Painel -->
+				<!-- Fim do Painel -->
 
-			<!-- Painel do Requisitante -->
+				<!-- Painel do Requisitante -->
 
-			<div class="panel panel-default" id="somePainelReq">
-				<div class="panel-heading" id="painel_req">
-					<h3 class="panel-title"><i class="flaticon flaticon-person icon-md" aria-hidden="true"></i>Dados do
-						Requisitante</h3>
-				</div>
-
-				<input type="hidden" name="codProjeto" id="codProjeto">
-				<input type="hidden" name="codAcao" id="codAcao">
-				<input type="hidden" name="codRecurso" id="codRecurso">
-
-				<div class="panel-body">
-					<div class="form-group row">
-						<div class="col-md-2" id="NomeSolicita">
-							<label for="cmb_NomeSolicitante">Nome Solicitante</label>
-							<select name="cmb_NomeSolicitante" id="cmb_NomeSolicitante" dataset="colleague"
-								datasetkey="colleagueId" datasetvalue="colleagueName" class="form-control" readonly>
-							</select>
-						</div>
-
-						<div class="col-md-2" id="GerenteSolicita">
-							<label for="cmb_GerenteSolicitante">Gerente/Diretor</label>
-							<input type="text" class="form-control" name="cmb_GerenteSolicitante"
-								id="cmb_GerenteSolicitante" readonly>
-						</div>
-
-						<div class="col-md-2">
-							<label for="numProcesso">Numero da Solicitação</label>
-							<input type="text" class="form-control" name="numProcesso" id="numProcesso" readonly>
-						</div>
-
-						<div class="col-md-3">
-							<label for="mail">Email da IEL</label>
-							<input type="text" class="form-control" name="mail" id="mail">
-						</div>
-
-						<div class="col-md-3">
-							<label for="linkPublicForm">LINK DO PUBLIC FORM</label>
-							<input type="text" class="form-control" name="linkPublicForm" id="linkPublicForm">
-						</div>
+				<div class="panel panel-default" id="somePainelReq">
+					<div class="panel-heading" id="painel_req">
+						<h3 class="panel-title"><i class="flaticon flaticon-person icon-md" aria-hidden="true"></i>Dados
+							do
+							Requisitante</h3>
 					</div>
 
-					<div class="form-group row">
-						<div class="col-md-2">
-							<label for="estiloVaga">Será Qual tipo de Contrato?</label>
-							<select name="estiloVaga" class="form-control" id="estiloVaga">
-								<option value="0" selected disabled>Selecione uma Opção</option>
-								<option value="1">Estágio</option>
-								<option value="2">Menor Aprendiz</option>
-							</select>
+					<input type="hidden" name="codProjeto" id="codProjeto">
+					<input type="hidden" name="codAcao" id="codAcao">
+					<input type="hidden" name="codRecurso" id="codRecurso">
+
+					<div class="panel-body">
+						<div class="form-group row">
+							<div class="col-md-2" id="NomeSolicita">
+								<label for="cmb_NomeSolicitante">Nome Solicitante</label>
+								<select name="cmb_NomeSolicitante" id="cmb_NomeSolicitante" dataset="colleague"
+									datasetkey="colleagueId" datasetvalue="colleagueName" class="form-control" readonly>
+								</select>
+							</div>
+
+							<div class="col-md-2" id="GerenteSolicita">
+								<label for="cmb_GerenteSolicitante">Gerente/Diretor</label>
+								<input type="text" class="form-control" name="cmb_GerenteSolicitante"
+									id="cmb_GerenteSolicitante" readonly>
+							</div>
+
+							<div class="col-md-2">
+								<label for="numProcesso">Numero da Solicitação</label>
+								<input type="text" class="form-control" name="numProcesso" id="numProcesso" readonly>
+							</div>
+
+							<div class="col-md-3">
+								<label for="mail">Email da IEL</label>
+								<input type="text" class="form-control" name="mail" id="mail">
+							</div>
+
+							<div class="col-md-3">
+								<label for="linkPublicForm">LINK DO PUBLIC FORM</label>
+								<input type="text" class="form-control" name="linkPublicForm" id="linkPublicForm">
+							</div>
 						</div>
 
-						<div class="col-md-2">
-							<label for="vaga">Substituto ou Nova Vaga?</label>
-							<select name="vaga" id="vaga" class="form-control">
-								<option value="select" selected disabled>Selecione uma Opção</option>
-								<option value="1">Substituto</option>
-								<option value="2">Nova Vaga de Estágio</option>
-							</select>
-						</div>
+						<div class="form-group row">
+							<div class="col-md-2">
+								<label for="estiloVaga">Será Qual tipo de Contrato?</label>
+								<select name="estiloVaga" class="form-control" id="estiloVaga">
+									<option value="0" selected disabled>Selecione uma Opção</option>
+									<option value="1">Estágio</option>
+									<option value="2">Menor Aprendiz</option>
+								</select>
+							</div>
 
-						<div class="col-md-3" id="UnidadeSolicita">
-							<label for="zm_UnidadeSolicitante">Unidade Solicitante</label>
-							<input type="text" class="form-control" name="cmb_UnidadeSolicitante"
-								id="cmb_UnidadeSolicitante" readonly>
-						</div>
-					</div>
-				</div>
-			</div>
+							<div class="col-md-2">
+								<label for="vaga">Substituto ou Nova Vaga?</label>
+								<select name="vaga" id="vaga" class="form-control">
+									<option value="select" selected disabled>Selecione uma Opção</option>
+									<option value="1">Substituto</option>
+									<option value="2">Nova Vaga de Estágio</option>
+								</select>
+							</div>
 
-			<!-- Fim do Painel -->
-
-			<!-- Painel de Dados da Empresa -->
-
-			<div class="panel panel-default" id="somePainelEmp">
-				<div class="panel-heading" id="painel_empresa">
-					<h3 class="panel-title"><i class="flaticon flaticon-desktop-list icon-md" aria-hidden="true"></i>
-						Dados da Empresa</h3>
-				</div>
-
-				<div class="panel-body">
-					<div class="form-group row">
-						<div class="col-md-2">
-							<label for="empresaUnidade">Empresa / Unidade:</label>
-							<input type="text" class="form-control" name="empresaUnidade" id="empresaUnidade">
-						</div>
-
-						<div class="col-md-2">
-							<label for="cnpj">CNPJ:</label>
-							<input type="number" class="form-control" name="cnpj" id="cnpj">
-						</div>
-
-						<div class="col-md-2">
-							<label for="endereco">Endereço:</label>
-							<input type="text" class="form-control" name="endereco" id="endereco">
-						</div>
-
-						<div class="col-md-2">
-							<label for="requisitanteVaga">Requisitante da Vaga:</label>
-							<select name="requisitanteVaga" id="requisitanteVaga" dataset="colleague"
-								datasetkey="colleagueId" datasetvalue="colleagueName" class="form-control">
-							</select>
-						</div>
-
-						<div class="col-md-2">
-							<label for="cargo">Cargo:</label>
-							<input type="text" class="form-control" name="cargo" id="cargo">
-						</div>
-					</div>
-					<div class="form-group row">
-						<div class="col-md-2">
-							<label for="departamento">Departamento:</label>
-							<input type="text" class="form-control" name="departamento" id="departamento">
-						</div>
-
-						<div class="col-md-2">
-							<label for="setorAprendiz">Setor:</label>
-							<input type="text" class="form-control" name="setorAprendiz" id="setorAprendiz">
-						</div>
-
-						<div class="col-md-2">
-							<label for="telefone">Telefone:</label>
-							<input type="number" class="form-control" name="telefone" id="telefone">
-						</div>
-
-						<div class="col-md-3">
-							<label for="emailEmp">E-mail:</label>
-							<input type="email" class="form-control" name="emailEmp" id="emailEmp">
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<!-- Fim do Painel -->
-
-			<!-- Painel de Dados do Jovem Aprendiz -->
-
-			<div class="panel panel-default" id="somePainelJov">
-				<div class="panel-heading" id="painel_jovem">
-					<h3 class="panel-title">Dados da Oportunidade de Jovem Aprendiz</h3>
-				</div>
-
-				<div class="panel-body">
-					<div class="form-group row">
-						<div class="col-md-2">
-							<label for="salario">Qual será o Salário?</label>
-							<input type="number" class="form-control" name="salario" id="salario">
-						</div>
-
-						<div class="col-md-2">
-							<label for="sexo">Qual o requisito de sexo?</label>
-							<select class="form-control" name="sexo" id="sexo">
-								<option value="selec" selected disabled>Selecione uma Opção</option>
-								<option value="masc">Masculino</option>
-								<option value="femi">Feminino</option>
-								<option value="nemTem">Não se aplica</option>
-							</select>
-						</div>
-
-						<div class="col-md-2">
-							<label for="supervisorAprendiz">Supervisor Responsável</label>
-							<select name="supervisorAprendiz" id="supervisorAprendiz" dataset="colleague"
-								datasetkey="colleagueId" datasetvalue="colleagueName" class="form-control">
-							</select>
-						</div>
-
-						<div class="col-md-2">
-							<label for="cargoSupervisor">Cargo do Supervisor:</label>
-							<input type="text" class="form-control" name="cargoSupervisor" id="cargoSupervisor">
-						</div>
-
-						<div class="col-md-1">
-							<label for="numVagas">Nº de Vagas:</label>
-							<input type="number" class="form-control" name="numVagas" id="numVagas">
-						</div>
-
-						<div class="col-md-1">
-							<label for="entradaAprendiz">Entrada:</label>
-							<input type="time" class="form-control" name="entradaAprendiz" id="entradaAprendiz">
-						</div>
-
-						<div class="col-md-1">
-							<label for="saidaAprendiz">Saída:</label>
-							<input type="time" class="form-control" name="saidaAprendiz" id="saidaAprendiz">
-						</div>
-					</div>
-
-					<div class="form-group row">
-						<div class="col-md-2">
-							<label for="localEntrevista">Local da Entrevista:</label>
-							<input type="text" class="form-control" name="localEntrevista" id="localEntrevista">
-						</div>
-
-						<div class="col-md-2">
-							<label for="pontoReferencia">Ponto de Referência:</label>
-							<input type="text" class="form-control" name="pontoReferencia" id="pontoReferencia">
-						</div>
-
-						<div class="col-md-2">
-							<label for="busca">Procurar por:</label>
-							<input type="text" class="form-control" name="busca" id="busca">
-						</div>
-
-						<div class="col-md-2">
-							<label for="setor">Setor de Atuação:</label>
-							<input type="text" class="form-control" name="setor" id="setor">
-						</div>
-
-						<div class="col-md-1">
-							<label for="idade">Idade Mínima:</label>
-							<input type="text" class="form-control" name="idade" id="idade">
-						</div>
-					</div>
-					<div class="form-group row">
-						<div class="col-md-3">
-							<label for="atividade">Principais Atividades Executadas:</label>
-							<textarea class="form-control" rows="5" name="atividade" id="atividade"></textarea>
-						</div>
-						<div class="col-md-3">
-							<label for="obsAprendiz">Observações:</label>
-							<textarea class="form-control" rows="5" name="obsAprendiz" id="obsAprendiz"></textarea>
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<!-- Fim do Painel -->
-
-			<!-- Painel da Oportunidade de Estágio -->
-
-			<div class="panel panel-default" id="somePainelEstag">
-				<div class="panel-heading" id="painel_estag">
-					<h3 class="panel-title"><i class="flaticon flaticon-file-awards icon-md"
-							aria-hidden="true"></i>Dados da Oportunidade de Estágio</h3>
-				</div>
-
-				<div class="panel-body">
-					<div class="form-group row">
-						<div class="col-md-2">
-							<label for="graduacao">Graduação:</label>
-							<input type="text" class="form-control" name="graduacao" id="graduacao">
-						</div>
-
-						<div class="col-md-2">
-							<label for="cargaHoraria">Carga Horária:</label>
-							<select class="form-control" name="cargaHoraria" id="cargaHoraria">
-								<option value="" selected disabled>Selecione uma Opção</option>
-								<option value="seis">6 Horas</option>
-								<option value="quatro">4 Horas</option>
-							</select>
-						</div>
-
-						<div class="col-md-1" id="turnoEntrada">
-							<label for="inicioTurno">Entrada:</label>
-							<input type="time" class="form-control" name="inicioTurno" id="inicioTurno">
-						</div>
-
-						<div class="col-md-1" id="turnoSaida">
-							<label for="finalTurno">Saída:</label>
-							<input type="time" class="form-control" name="finalTurno" id="finalTurno">
-						</div>
-
-						<div class="col-md-2">
-							<label for="tipoEnsino">Cursando:</label>
-							<select class="form-control" name="typeEnsino" id="typeEnsino">
-								<option value="selecione" selected disabled>Selecione uma Opção</option>
-								<option value="medio">Ensino Médio</option>
-								<option value="superior">Ensino Superior</option>
-							</select>
-						</div>
-
-						<div class="col-md-1" id="someSerie">
-							<label for="serie">Série:</label>
-							<input type="number" class="form-control" name="serie" id="serie">
-						</div>
-
-						<div class="col-md-1" id="somePeriodo">
-							<label for="periodo">Período:</label>
-							<input type="number" class="form-control" name="periodo" id="periodo">
-						</div>
-					</div>
-
-					<div class="form-group row">
-						<div class="col-md-2" id="SuperSolicita">
-							<label for="supervisor">Supervisor Responsável:</label>
-							<select name="supervisor" id="supervisor" dataset="colleague" datasetkey="colleagueId"
-								datasetvalue="colleagueName" class="form-control">
-							</select> 
-						</div>
-
-						<div class="col-md-2">
-							<label for="formacao">Formação/Experiência Profissional:</label>
-							<input type="text" class="form-control" name="formacao" id="formacao">
-						</div>
-
-						<div class="col-md-2" id="estagioSub">
-							<label for="estagsub">Estagiário Substituído:</label>
-							<select name="estagsub" id="estagsub" dataset="colleague" datasetkey="colleagueId"
-								datasetvalue="colleagueName" class="form-control">
-							</select>
-						</div>
-
-						<div class="col-md-2" id="dataSaida">
-							<label for="dtSaida">Data de Saída:</label>
-							<input type="date" class="form-control" name="dtSaida" id="dtSaida">
-						</div>
-					</div>
-
-					<div class="form-group row">
-						<div class="col-md-6">
-							<label for="Detalhes">Atividades a Serem Desenvolvidas no Estágio:</label>
-							<textarea rows="5" name="Detalhes" id="Detalhes" class="form-control"></textarea>
+							<div class="col-md-3" id="UnidadeSolicita">
+								<label for="zm_UnidadeSolicitante">Unidade Solicitante</label> 
+								<input type="text" class="form-control" name="cmb_UnidadeSolicitante"
+									id="cmb_UnidadeSolicitante" readonly>
+							</div>
 						</div>
 					</div>
 				</div>
 
-				<!-- Painel da Tabela de Demanda -->
-				<div class="panel panel-default" style="display: none">
-					<div class="panel-heading">
-						<h3 class="panel-title">SolicitaÃ§Ã£o</h3>
+				<!-- Fim do Painel -->
+
+				<!-- Painel da UMP -->
+
+				<div class="panel panel-default" id="somePainelUMP">
+					<div class="panel-heading" id="painel_ump">
+						<h3 class="panel-title">Protocolo de Itens</h3>
 					</div>
-					<div class="panel-body" style="display: none">
-						<div class="form-group table-responsive">
-							<div class="table">
-								<tbody>
-									<!--<tr>
+
+					<div class="panel-body">
+						<div class="form-group row">
+							<div class="col-md-2">
+
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Painel de Dados da Empresa -->
+
+				<div class="panel panel-default" id="somePainelEmp">
+					<div class="panel-heading" id="painel_empresa">
+						<h3 class="panel-title"><i class="flaticon flaticon-desktop-list icon-md"
+								aria-hidden="true"></i>
+							Dados da Empresa</h3>
+					</div>
+
+					<div class="panel-body">
+						<div class="form-group row">
+							<div class="col-md-2">
+								<label for="empresaUnidade">Empresa / Unidade:</label>
+								<input type="text" class="form-control" name="empresaUnidade" id="empresaUnidade">
+							</div>
+
+							<div class="col-md-2">
+								<label for="cnpj">CNPJ:</label>
+								<input type="number" class="form-control" name="cnpj" id="cnpj">
+							</div>
+
+							<div class="col-md-2">
+								<label for="endereco">Endereço:</label>
+								<input type="text" class="form-control" name="endereco" id="endereco">
+							</div>
+
+							<div class="col-md-2">
+								<label for="requisitanteVaga">Requisitante da Vaga:</label>
+								<select name="requisitanteVaga" id="requisitanteVaga" dataset="colleague"
+									datasetkey="colleagueId" datasetvalue="colleagueName" class="form-control">
+								</select>
+							</div>
+
+							<div class="col-md-2">
+								<label for="cargo">Cargo:</label>
+								<input type="text" class="form-control" name="cargo" id="cargo">
+							</div>
+						</div>
+						<div class="form-group row">
+							<div class="col-md-2">
+								<label for="departamento">Departamento:</label>
+								<input type="text" class="form-control" name="departamento" id="departamento">
+							</div>
+
+							<div class="col-md-2">
+								<label for="setorAprendiz">Setor:</label>
+								<input type="text" class="form-control" name="setorAprendiz" id="setorAprendiz">
+							</div>
+
+							<div class="col-md-2">
+								<label for="telefone">Telefone:</label>
+								<input type="number" class="form-control" name="telefone" id="telefone">
+							</div>
+
+							<div class="col-md-3">
+								<label for="emailEmp">E-mail:</label>
+								<input type="email" class="form-control" name="emailEmp" id="emailEmp">
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Fim do Painel -->
+
+				<!-- Painel de Dados do Jovem Aprendiz -->
+
+				<div class="panel panel-default" id="somePainelJov">
+					<div class="panel-heading" id="painel_jovem">
+						<h3 class="panel-title">Dados da Oportunidade de Jovem Aprendiz</h3>
+					</div>
+
+					<div class="panel-body">
+						<div class="form-group row">
+							<div class="col-md-2">
+								<label for="salario">Qual será o Salário?</label>
+								<input type="number" class="form-control" name="salario" id="salario">
+							</div>
+
+							<div class="col-md-2">
+								<label for="sexo">Qual o requisito de sexo?</label>
+								<select class="form-control" name="sexo" id="sexo">
+									<option value="selec" selected disabled>Selecione uma Opção</option>
+									<option value="masc">Masculino</option>
+									<option value="femi">Feminino</option>
+									<option value="nemTem">Não se aplica</option>
+								</select>
+							</div>
+
+							<div class="col-md-2">
+								<label for="supervisorAprendiz">Supervisor Responsável</label>
+								<select name="supervisorAprendiz" id="supervisorAprendiz" dataset="colleague"
+									datasetkey="colleagueId" datasetvalue="colleagueName" class="form-control">
+								</select>
+							</div>
+
+							<div class="col-md-2">
+								<label for="cargoSupervisor">Cargo do Supervisor:</label>
+								<input type="text" class="form-control" name="cargoSupervisor" id="cargoSupervisor">
+							</div>
+
+							<div class="col-md-1">
+								<label for="numVagas">Nº de Vagas:</label>
+								<input type="number" class="form-control" name="numVagas" id="numVagas">
+							</div>
+
+							<div class="col-md-1">
+								<label for="entradaAprendiz">Entrada:</label>
+								<input type="time" class="form-control" name="entradaAprendiz" id="entradaAprendiz">
+							</div>
+
+							<div class="col-md-1">
+								<label for="saidaAprendiz">Saída:</label>
+								<input type="time" class="form-control" name="saidaAprendiz" id="saidaAprendiz">
+							</div>
+						</div>
+
+						<div class="form-group row">
+							<div class="col-md-2">
+								<label for="localEntrevista">Local da Entrevista:</label>
+								<input type="text" class="form-control" name="localEntrevista" id="localEntrevista">
+							</div>
+
+							<div class="col-md-2">
+								<label for="pontoReferencia">Ponto de Referência:</label>
+								<input type="text" class="form-control" name="pontoReferencia" id="pontoReferencia">
+							</div>
+
+							<div class="col-md-2">
+								<label for="busca">Procurar por:</label>
+								<input type="text" class="form-control" name="busca" id="busca">
+							</div>
+
+							<div class="col-md-2">
+								<label for="setor">Setor de Atuação:</label>
+								<input type="text" class="form-control" name="setor" id="setor">
+							</div>
+
+							<div class="col-md-1">
+								<label for="idade">Idade Mínima:</label>
+								<input type="text" class="form-control" name="idade" id="idade">
+							</div>
+						</div>
+						<div class="form-group row">
+							<div class="col-md-3">
+								<label for="atividade">Principais Atividades Executadas:</label>
+								<textarea class="form-control" rows="5" name="atividade" id="atividade"></textarea>
+							</div>
+							<div class="col-md-3">
+								<label for="obsAprendiz">Observações:</label>
+								<textarea class="form-control" rows="5" name="obsAprendiz" id="obsAprendiz"></textarea>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Fim do Painel -->
+
+				<!-- Painel da Oportunidade de Estágio -->
+
+				<div class="panel panel-default" id="somePainelEstag">
+					<div class="panel-heading" id="painel_estag">
+						<h3 class="panel-title"><i class="flaticon flaticon-file-awards icon-md"
+								aria-hidden="true"></i>Dados da Oportunidade de Estágio</h3>
+					</div>
+
+					<div class="panel-body">
+						<div class="form-group row">
+							<div class="col-md-2">
+								<label for="graduacao">Graduação:</label>
+								<input type="text" class="form-control" name="graduacao" id="graduacao">
+							</div>
+
+							<div class="col-md-2">
+								<label for="cargaHoraria">Carga Horária:</label>
+								<select class="form-control" name="cargaHoraria" id="cargaHoraria">
+									<option value="" selected disabled>Selecione uma Opção</option>
+									<option value="seis">6 Horas</option>
+									<option value="quatro">4 Horas</option>
+								</select>
+							</div>
+
+							<div class="col-md-1" id="turnoEntrada">
+								<label for="inicioTurno">Entrada:</label>
+								<input type="time" class="form-control" name="inicioTurno" id="inicioTurno">
+							</div>
+
+							<div class="col-md-1" id="turnoSaida">
+								<label for="finalTurno">Saída:</label>
+								<input type="time" class="form-control" name="finalTurno" id="finalTurno">
+							</div>
+
+							<div class="col-md-2">
+								<label for="tipoEnsino">Cursando:</label>
+								<select class="form-control" name="typeEnsino" id="typeEnsino">
+									<option value="selecione" selected disabled>Selecione uma Opção</option>
+									<option value="medio">Ensino Médio</option>
+									<option value="superior">Ensino Superior</option>
+								</select>
+							</div>
+
+							<div class="col-md-1" id="someSerie">
+								<label for="serie">Série:</label>
+								<input type="number" class="form-control" name="serie" id="serie">
+							</div>
+
+							<div class="col-md-1" id="somePeriodo">
+								<label for="periodo">Período:</label>
+								<input type="number" class="form-control" name="periodo" id="periodo">
+							</div>
+						</div>
+
+						<div class="form-group row">
+							<div class="col-md-2" id="SuperSolicita">
+								<label for="supervisor">Supervisor Responsável:</label>
+								<select name="supervisor" id="supervisor" dataset="colleague" datasetkey="colleagueId"
+									datasetvalue="colleagueName" class="form-control">
+								</select>
+							</div>
+
+							<div class="col-md-2">
+								<label for="formacao">Formação/Experiência Profissional:</label>
+								<input type="text" class="form-control" name="formacao" id="formacao">
+							</div>
+
+							<div class="col-md-2" id="estagioSub">
+								<label for="estagsub">Estagiário Substituído:</label>
+								<select name="estagsub" id="estagsub" dataset="colleague" datasetkey="colleagueId"
+									datasetvalue="colleagueName" class="form-control">
+								</select>
+							</div>
+
+							<div class="col-md-2" id="dataSaida">
+								<label for="dtSaida">Data de Saída:</label>
+								<input type="date" class="form-control" name="dtSaida" id="dtSaida">
+							</div>
+						</div>
+
+						<div class="form-group row">
+							<div class="col-md-6">
+								<label for="Detalhes">Atividades a Serem Desenvolvidas no Estágio:</label>
+								<textarea rows="5" name="Detalhes" id="Detalhes" class="form-control"></textarea>
+							</div>
+						</div>
+
+						<div class="form-group row">
+							<div class="col-md-2" id="disp">
+								<label for="disponivel">Possui Candidatos Prévios?</label>
+								<select name="disponivel" class="form-control" id="disponivel">
+									<option value="" selected disabled>Selecione uma Opção</option>
+									<option value="1">Sim</option>
+									<option value="2">Não</option>
+								</select>
+							</div>
+
+							<div class="col-md-2" id="aprov">
+								<label for="aprovacao">Candidato Aprovado?</label>
+								<select name="aprovacao" class="form-control" id="aprovacao">
+									<option value="" selected disabled>Selecione uma Opção</option>
+									<option value="1">Sim</option>
+									<option value="2">Não</option>
+								</select>
+							</div>
+
+							<div class="col-md-2" id="stats">
+								<label for="status">Documentos Entregues?</label>
+								<select name="status" class="form-control" id="status">
+									<option value="" selected disabled>Selecione uma Opção</option>
+									<option value="1">Sim</option>
+									<option value="2">Não</option>
+								</select>
+							</div>
+						</div>
+					</div>
+
+					<!-- Painel da Tabela de Demanda -->
+					<div class="panel panel-default" style="display: none">
+						<div class="panel-heading">
+							<h3 class="panel-title">SolicitaÃ§Ã£o</h3>
+						</div>
+						<div class="panel-body" style="display: none">
+							<div class="form-group table-responsive">
+								<div class="table">
+									<tbody>
+										<!--<tr>
 											<td><button type="button" class="addItem" id="addItem" onclick="addItens();">Inserir SolicitaÃ§Ã£o <b>+</b></button></td>
 											
 										</tr>-->
+										<tr>
+											<td>
+												<table id="dadosItem" tablename="dadosItem" class="table table-hover"
+													noaddbutton="true" nodeletebutton="true">
+													<thead>
+														<tr>
+															<td></td>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td>
+																<span
+																	class="fluig-style-guide fs-display-block fs-md-space">
+																	<i type="button"
+																		class="fluigicon fluigicon-trash fluigicon-md delItem"
+																		id="delItem" name="delItem"
+																		onclick="Javascript:fnCustomDeleteItem(this);"
+																		style="cursor:pointer"></i>
+																</span>
+															</td>
+															<td>
+																<div class="form-group">
+																	<label for="tipo_solicitacao">Tipo de SolicitaÃ§Ã£o
+																		<span
+																			class="Obrigatorio"><strong>*</strong></span>:</label>
+																	<input class="form-control" name="tipo_solicitacao"
+																		id="tipo_solicitacao">
+
+																</div>
+															</td>
+															<td>
+																<div class="form-group">
+																	<label for="detalhes">Detalhes da
+																		SolicitaÃ§Ã£o</label>
+																	<textarea rows=2 name="detalhe" id="detalhe"
+																		class="form-control"></textarea>
+																</div>
+															</td>
+														</tr>
+													</tbody>
+												</table>
+											</td>
+										</tr>
+									</tbody>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- Fim do Painel -->
+				</div>
+
+				<!-- Fim do Painel -->
+
+				<!-- Painel Detalhes da Demanda -->
+
+				<div class="panel panel-default" id="somePainelDetalhes">
+					<div class="panel-heading" id="painel_detalhes">
+						<h3 class="panel-title"><i class="flaticon flaticon-add-box icon-md" aria-hidden="true"></i>
+							Detalhes da Demanda</h3>
+					</div>
+
+					<div class="panel-body">
+						<div class="table-responsive">
+							<div class="table">
+								<thead>
+								</thead>
+								<tbody>
 									<tr>
 										<td>
-											<table id="dadosItem" tablename="dadosItem" class="table table-hover"
+											<div class="col-md-3">
+												<div class="form-group" id="input1">
+												</div>
+											</div>
+											<div class="col-md-4">
+												<div class="form-group" id="input2">
+												</div>
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<div class="col-md-2">
+												<div class="form-group row">
+													<div class="bs-docs-popover-hover">
+														<br>
+														<button type="button" class="btn btn-default"
+															data-comp-show-modal="small" id="addItem"
+															onclick="adicionarItem();">Inserir Entrevista
+															<b>+</b></button>
+													</div>
+												</div>
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<div class="col-md-7">
+												<table class="table table-bordered table-striped table-hover certa"
+													noaddbutton="true" nodeletebutton="true">
+													<thead>
+														<tr>
+															<td class="col-md-3">Serviços
+															</td>
+															<td class="col-md-6">Detalhes</td>
+															<td class="col-md-1">Remove</td>
+														</tr>
+													</thead>
+
+													<tbody>
+													</tbody>
+
+												</table>
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</div>
+						</div>
+
+						<div class="table-responsive">
+							<table class="table">
+								<thead>
+									<tr>
+										<td>
+
+										</td>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>
+											<div class="col-md-2">
+												<button type="button" class="waves-effect waves-light btn btn-default"
+													id="addRateio" onclick="addRateioz();">Inserir Dotação Orçamentária
+													<b>+</b></button>
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<table id="dadosrateio" tablename="dadosrateio" class="table table-hover"
 												noaddbutton="true" nodeletebutton="true">
 												<thead>
 													<tr>
@@ -380,206 +567,43 @@
 															<span
 																class="fluig-style-guide fs-display-block fs-md-space">
 																<i type="button"
-																	class="fluigicon fluigicon-trash fluigicon-md delItem"
-																	id="delItem" name="delItem"
-																	onclick="Javascript:fnCustomDeleteItem(this);"
-																	style="cursor:pointer"></i>
+																	class="fluigicon fluigicon-trash fluigicon-md delRateio"
+																	id="deleta_rateio" name="deleta_rateio"
+																	onclick="Javascript:fnCustomDelete(this);"
+																	style="cursor:pointer">
+																</i>
 															</span>
 														</td>
 														<td>
-															<div class="form-group">
-																<label for="tipo_solicitacao">Tipo de SolicitaÃ§Ã£o
-																	<span
-																		class="Obrigatorio"><strong>*</strong></span>:</label>
-																<input class="form-control" name="tipo_solicitacao"
-																	id="tipo_solicitacao">
 
+															<div class="form-group row">
+
+																<div class="col-md-4">
+																	<label for="slc_FonteRecursos">Fonte de
+																		Recurso:</label>
+																	<select class="form-control"
+																		name="slc_FonteRecursos" id="slc_FonteRecursos">
+																		<option value="">Selecione
+																		</option>
+																		<option value="CSO">Contribuição Social
+																			Ordinária -
+																			CSO
+																		</option>
+																		<option value="CSN">Contribuição Social Nacional
+																			-
+																			CSN
+																		</option>
+																	</select>
+																</div>
 															</div>
-														</td>
-														<td>
-															<div class="form-group">
-																<label for="detalhes">Detalhes da SolicitaÃ§Ã£o</label>
-																<textarea rows=2 name="detalhe" id="detalhe"
-																	class="form-control"></textarea>
-															</div>
-														</td>
-													</tr>
-												</tbody>
-											</table>
-										</td>
-									</tr>
-								</tbody>
-							</div>
-						</div>
-					</div>
-				</div>
-				<!-- Fim do Painel -->
-			</div>
 
-			<!-- Fim do Painel -->
+															<div class="form-group row">
 
-			<!-- Painel Detalhes da Demanda -->
-
-			<div class="panel panel-default" id="somePainelDetalhes">
-				<div class="panel-heading" id="painel_detalhes">
-					<h3 class="panel-title"><i class="flaticon flaticon-add-box icon-md" aria-hidden="true"></i>
-						Detalhes da Demanda</h3>
-				</div>
-
-				<div class="panel-body">
-					<div class="form-group row">
-						<div class="col-md-2" id="disp">
-							<label for="disponivel">Possui Candidatos Prévios?</label>
-							<select name="disponivel" class="form-control" id="disponivel">
-								<option value="" selected disabled>Selecione uma Opção</option>
-								<option value="1">Sim</option>
-								<option value="2">Não</option>
-							</select>
-						</div>
-
-						<div class="col-md-2" id="aprov">
-							<label for="aprovacao">Candidato Aprovado?</label>
-							<select name="aprovacao" class="form-control" id="aprovacao">
-								<option value="" selected disabled>Selecione uma Opção</option>
-								<option value="1">Sim</option>
-								<option value="2">Não</option>
-							</select>
-						</div>
-
-						<div class="col-md-2" id="stats">
-							<label for="status">Documentos Entregues?</label>
-							<select name="status" class="form-control" id="status">
-								<option value="" selected disabled>Selecione uma Opção</option>
-								<option value="1">Sim</option>
-								<option value="2">Não</option>
-							</select>
-						</div>
-					</div>
-
-					<div class="table-responsive">
-						<div class="table">
-							<thead>
-							</thead>
-							<tbody>
-								<tr>
-									<td>
-										<div class="col-md-3">
-											<div class="form-group" id="input1">
-											</div>
-										</div>
-										<div class="col-md-4">
-											<div class="form-group" id="input2">
-											</div>
-										</div>
-									</td>
-								</tr>
-								<tr>
-									<td>
-										<div class="col-md-2">
-											<div class="form-group row">
-												<div class="bs-docs-popover-hover">
-													<br>
-													<button type="button" class="btn btn-default"
-														data-comp-show-modal="small" id="addItem"
-														onclick="adicionarItem();">Inserir Entrevista
-														<b>+</b></button>
-												</div>
-											</div>
-										</div>
-									</td>
-								</tr>
-								<tr>
-									<td>
-										<div class="col-md-7">
-											<table class="table table-bordered table-striped table-hover certa"
-												noaddbutton="true" nodeletebutton="true">
-												<thead>
-													<tr>
-														<td class="col-md-3">Serviços
-														</td>
-														<td class="col-md-6">Detalhes</td>
-														<td class="col-md-1">Remove</td>
-													</tr>
-												</thead>
-
-												<tbody>
-												</tbody>
-
-											</table>
-										</div>
-									</td>
-								</tr>
-							</tbody>
-						</div>
-					</div>
-
-					<div class="table-responsive">
-						<table class="table">
-							<thead>
-								<tr>
-									<td>
-
-									</td>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td>
-										<div class="col-md-2">
-											<button type="button" class="waves-effect waves-light btn btn-default"
-												id="addRateio" onclick="addRateioz();">Inserir Dotação Orçamentária
-												<b>+</b></button>
-										</div>
-									</td>
-								</tr>
-								<tr>
-									<td>
-										<table id="dadosrateio" tablename="dadosrateio" class="table table-hover"
-											noaddbutton="true" nodeletebutton="true">
-											<thead>
-												<tr>
-													<td></td>
-												</tr>
-											</thead>
-											<tbody>
-												<tr>
-													<td>
-														<span class="fluig-style-guide fs-display-block fs-md-space">
-															<i type="button"
-																class="fluigicon fluigicon-trash fluigicon-md delRateio"
-																id="deleta_rateio" name="deleta_rateio"
-																onclick="Javascript:fnCustomDelete(this);"
-																style="cursor:pointer">
-															</i>
-														</span>
-													</td>
-													<td>
-
-														<div class="form-group row">
-
-															<div class="col-md-4">
-																<label for="slc_FonteRecursos">Fonte de Recurso:</label>
-																<select class="form-control" name="slc_FonteRecursos"
-																	id="slc_FonteRecursos">
-																	<option value="">Selecione
-																	</option>
-																	<option value="CSO">Contribuição Social Ordinária -
-																		CSO
-																	</option>
-																	<option value="CSN">Contribuição Social Nacional -
-																		CSN
-																	</option>
-																</select>
-															</div>
-														</div>
-
-														<div class="form-group row">
-
-															<div class="col-md-9" style="display: none;">
-																<label for="txt_projeto">Projeto<span
-																		class="Obrigatorio"><strong>*</strong></span>:</label>
-																<input type="zoom" id="txt_projeto" name="txt_projeto"
-																	data-zoom="{
+																<div class="col-md-9" style="display: none;">
+																	<label for="txt_projeto">Projeto<span
+																			class="Obrigatorio"><strong>*</strong></span>:</label>
+																	<input type="zoom" id="txt_projeto"
+																		name="txt_projeto" data-zoom="{
 																	'displayKey':'NOME',
 																	'datasetId':'dsprojeto',
 																	'maximumSelectionLength':'1',
@@ -596,30 +620,30 @@
 																	]
 																	}">
 
-															</div>
+																</div>
 
-															<div class="col-md-9 projetov"></div>
+																<div class="col-md-9 projetov"></div>
 
-															<input type="hidden" name="txt_codprojeto"
-																id="txt_codprojeto">
+																<input type="hidden" name="txt_codprojeto"
+																	id="txt_codprojeto">
 
-															<div class="col-md-2">
-																<label for="txt_saldo">Saldo:</label>
-																<div class="input-group">
-																	<input class="form-control mm" type="text"
-																		name="txt_saldo" id="txt_saldo" readonly>
-																	<span class="input-group-addon">$</span>
+																<div class="col-md-2">
+																	<label for="txt_saldo">Saldo:</label>
+																	<div class="input-group">
+																		<input class="form-control mm" type="text"
+																			name="txt_saldo" id="txt_saldo" readonly>
+																		<span class="input-group-addon">$</span>
+																	</div>
 																</div>
 															</div>
-														</div>
 
-														<div class="form-group row">
+															<div class="form-group row">
 
-															<div class="col-md-9" style="display: none;">
-																<label for="txt_acao">Ação<span
-																		class="Obrigatorio"><strong>*</strong></span>:</label>
-																<input type="zoom" class="form-control" id="txt_acao"
-																	name="txt_acao" data-zoom="{
+																<div class="col-md-9" style="display: none;">
+																	<label for="txt_acao">Ação<span
+																			class="Obrigatorio"><strong>*</strong></span>:</label>
+																	<input type="zoom" class="form-control"
+																		id="txt_acao" name="txt_acao" data-zoom="{
 																	'displayKey':'NOME',
 																	'datasetId':'dsacao',
 																	'maximumSelectionLength':'1',
@@ -639,25 +663,26 @@
 																	]
 																	}">
 
+																</div>
+
+																<div class="col-md-9 acaov"></div>
+
+																<input type="hidden" name="txt_codacao"
+																	id="txt_codacao">
+																<div class="col-md-2">
+																	<label for="txt_valorUtil">Valor utilizado :</label>
+																	<input type="text" class="form-control"
+																		name="txt_valorUtil" id="txt_valorUtil"
+																		onchange="formatarMoeda(this);validateValor()">
+
+																</div>
 															</div>
-
-															<div class="col-md-9 acaov"></div>
-
-															<input type="hidden" name="txt_codacao" id="txt_codacao">
-															<div class="col-md-2">
-																<label for="txt_valorUtil">Valor utilizado :</label>
-																<input type="text" class="form-control"
-																	name="txt_valorUtil" id="txt_valorUtil"
-																	onchange="formatarMoeda(this);validateValor()">
-
-															</div>
-														</div>
-														<div class="form-group row">
-															<div class="col-md-9" style="display: none;">
-																<label for="txt_recursos">Unidade<span
-																		class="Obrigatorio"><strong>*</strong></span>:</label>
-																<input type="zoom" class="form-control"
-																	id="txt_recursos" name="txt_recursos" data-zoom="{
+															<div class="form-group row">
+																<div class="col-md-9" style="display: none;">
+																	<label for="txt_recursos">Unidade<span
+																			class="Obrigatorio"><strong>*</strong></span>:</label>
+																	<input type="zoom" class="form-control"
+																		id="txt_recursos" name="txt_recursos" data-zoom="{
 																	'displayKey':'NOME',
 																	'datasetId':'dsunidade',
 																	'maximumSelectionLength':'1',
@@ -674,28 +699,28 @@
 																	]
 																	}">
 
+																</div>
+																<div class="col-md-9 unidadev"></div>
+																<input type="hidden" name="txt_codrecurso"
+																	id="txt_codrecurso">
 															</div>
-															<div class="col-md-9 unidadev"></div>
-															<input type="hidden" name="txt_codrecurso"
-																id="txt_codrecurso">
-														</div>
-													</td>
-												</tr>
-											</tbody>
-										</table>
-									</td>
-								</tr>
-							</tbody>
-						</table>
+														</td>
+													</tr>
+												</tbody>
+											</table>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<hr>
 					</div>
-					<hr>
 				</div>
+				<!-- Fim do Painel -->
 			</div>
-			<!-- Fim do Painel -->
-		</div>	 
 
 			<!-- Inicio da Seção do Card de Informações -->
-			<div class="panel-body col-md-6" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+			<div class="panel-body col-md-6" id="some" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
 				<div class="card" id="cardInfo">
 					<div class="card-body">
 						<h1 class="card-title">
@@ -705,11 +730,14 @@
 							</lord-icon>
 							Atenção:
 						</h1>
-						<h4 class="card-text">No momento não está disponível para fazer a Solicitação de Estagiário ou Menor Aprendiz, o mesmo é necessário ser feito apenas
+						<h4 class="card-text">No momento não está disponível para fazer a Solicitação de Estagiário ou
+							Menor Aprendiz, o mesmo é necessário ser feito apenas
 							nas datas previstas dentro do calendário de contratação.</h4>
 						<ul>
 							<div id="ad">
-								<li><strong><h3>Datas para Solicitação:</h3></strong></li>
+								<li><strong>
+										<h3>Datas para Solicitação:</h3>
+									</strong></li>
 								<ol>
 									<li><strong>Dia 05 de Janeiro de 2024.</strong>
 									</li><br>
@@ -734,7 +762,7 @@
 									<li><strong>Dia 05 de Novembro de 2024.</strong>
 									</li><br>
 									<li><strong>Dia 05 de Dezembro de 2024.</strong>
-									</li>		
+									</li>
 								</ol>
 							</div>
 						</ul>
@@ -755,83 +783,150 @@
 		if (parent.WCMAPI.getUserLogin() == null) {
 			for (var i = 0; i < panel.length; i++) {
 				if (i == 0 || i == 5) {
-				document.getElementById(panel[i]).style.display = 'none';
+					document.getElementById(panel[i]).style.display = 'none';
 				}
 			}
 		}
 	}
 	painelHide();
+
+	function email(atv) {
+		// atv = atividade
+		console.log(' -------------------*** ** ** * * * 1')
+		// gestorDesc = document.getElementById('gestorResp').value
+		// console.log(gestorDesc)
+		solictDesc = document.getElementById('cmb_NomeSolicitante').value
+		console.log(solictDesc)
+		solIn = window.parent.ECM.workflowView.processDefinition.processInstanceId;
+		console.log(solIn)
+		// LinKiM = 'https://myweb.am.sebrae.com.br/portal/p/1/pageworkflowview?app_ecm_workflowview_detailsProcessInstanceID=' + solIn;
+		LinKiM = 'https://mywebhm.am.sebrae.com.br/portal/p/1/pageworkflowview?app_ecm_workflowview_detailsProcessInstanceID=' + solIn;
+		console.log(' -------------------*** ** ** * * * 2')
+		dsMail = DatasetFactory.getDataset("colleague", null, null, null).values;
+		eMailIn = 0;
+		// nameGest = 0;
+		nameSoli = 0;
+		// for (i = 0; i < dsMail.length; i++) {
+		// 	if (dsMail[i]['colleaguePK.colleagueId'] == gestorDesc) {
+		// 		nameGest = dsMail[i]['colleagueName'];
+		// 	}
+		// }
+		for (i = 0; i < dsMail.length; i++) {
+			if (dsMail[i]['colleaguePK.colleagueId'] == solictDesc) {
+				eMailIn = dsMail[i]['mail'];
+				nameSoli = dsMail[i]['colleagueName'];
+			}
+		}
+		console.log(' -------------------*** ** ** * * * 3')
+		// console.log(nameGest)
+		console.log(eMailIn)
+		console.log(nameSoli)
+		var settings = {
+			"url": "https://mywebhm.am.sebrae.com.br/api/public/alert/customEmailSender",
+			"method": "POST",
+			"timeout": 20000,
+			"headers": {
+				"Content-Type": "application/json"
+			},
+			"data": JSON.stringify({
+				"to": eMailIn,
+				"from": "intranet.am@am.sebrae.com.br",
+				"subject": "Solicitação de Serviços UAJUR - MYWEB",
+				"templateId": "novaSolicitação",
+				"dialectId": "pt_BR",
+				"param": {
+					"GESTOR": nameSoli,
+					"NUMERO": solIn,
+					"LINK": LinKiM
+				}
+			}),
+		};
+
+		$.ajax(settings).done(function (response) {
+			console.log(response);
+		});
+
+	}
 </script>
 
 <style>
 	.panel-heading {
 		background: linear-gradient(to right, #00df89, #00df89);
 	}
-	
+
 	#painel_req {
 		color: #f4f4f4;
 	}
-	
+
 	#painel_estag {
 		color: #f4f4f4
 	}
-	
+
 	#addRateio {
-		background-color: #00df89;
-		box-shadow: 0px 0px 15px rgba(22, 21, 21, 0.356);
+		border: 2px solid #00df89;
+		background-color: #fff;
+		color: #00df89;
 		transition: transform 0.3s ease;
 	}
-	
+
 	#addRateio:hover {
+		border: 2px solid #0fbd7a;
 		background-color: #0fbd7a;
-		color: #1b1d1c;
+		color: #fff;
 		transform: scale(1.1);
 	}
-	
+
 	#addItem {
-		background-color: #00df89;
-		box-shadow: 0px 0px 15px rgba(22, 21, 21, 0.356);
+		border: 2px solid #00df89;
+		background-color: #fff;
+		color: #00df89;
 		transition: transform 0.3s ease;
 	}
 	
 	#addItem:hover {
+		border: 2px solid #0fbd7a;
 		background-color: #0fbd7a;
-		color: #1b1d1c;
+		color: #fff;
 		transform: scale(1.1);
 	}
-	
+
 	#painel_cabecalho {
 		color: #f4f4f4;
 	}
-	
+
+	#painel_ump {
+		color: #f4f4f4;
+	}
+
 	#painel_empresa {
 		color: #f4f4f4;
 	}
-	
+
 	#painel_jovem {
 		color: #f4f4f4;
 	}
-	
+
 	#painel_detalhes {
 		color: #f4f4f4;
 	}
-	
+
 	::-webkit-scrollbar {
 		width: 8px;
 		height: 8px;
 	}
-	
+
 	::-webkit-scrollbar-track {
 		background: #f1f1f1;
 	}
-	
+
 	::-webkit-scrollbar-thumb {
 		background: #888;
 		border-radius: 10px;
 	}
-	
+
 	::-webkit-scrollbar-thumb:hover {
 		background: #555;
 	}
 </style>
+
 </html>
