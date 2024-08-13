@@ -23,11 +23,11 @@ function enableFields(form){
 
     else if(Now == 57) {
         disableAllFields(form)
-        fields = ["aprovacao"]
+        fields = ["aprovacao", "emailAprovado"]
         enableFieldsFromList(form,fields)
     }
 
-    else if(Now == 64) {
+    else if(Now == 64 || Now == 92) {
         disableAllFields(form)
         fields = ["status"]
         enableFieldsFromList(form,fields)

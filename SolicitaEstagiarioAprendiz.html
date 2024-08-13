@@ -74,8 +74,8 @@
 								<input type="text" class="form-control" name="mail" id="mail">
 							</div>
 
-							<div class="col-md-3">
-								<label for="linkPublicForm">LINK DO PUBLIC FORM</label>
+							<div class="col-md-3" id="linkSome">
+								<label for="linkPublicForm">Link IEL</label>
 								<input type="text" class="form-control" name="linkPublicForm" id="linkPublicForm">
 							</div>
 						</div>
@@ -103,6 +103,45 @@
 								<label for="zm_UnidadeSolicitante">Unidade Solicitante</label> 
 								<input type="text" class="form-control" name="cmb_UnidadeSolicitante"
 									id="cmb_UnidadeSolicitante" readonly>
+							</div>
+						</div>
+
+						<div class="form-group row">
+							<div class="col-md-2" id="disp">
+								<label for="disponivel">Possui Candidatos Prévios?</label>
+								<select name="disponivel" class="form-control" id="disponivel">
+									<option value="" selected disabled>Selecione uma Opção</option>
+									<option value="1">Sim</option>
+									<option value="2">Não</option>
+								</select>
+							</div>
+
+							<div class="col-md-2" id="emailAprov">
+								<label for="emailAprovado">Email do Candidato Aprovado:</label>
+								<input type="text" class="form-control" name="emailAprovado" id="emailAprovado">
+							</div>
+
+							<div class="col-md-3" id="cand">
+								<label for="linkCandidato">Link Candidato</label>
+								<input type="text" class="form-control" name="linkCandidato" id="linkCandidato">
+							</div>
+
+							<div class="col-md-2" id="aprov">
+								<label for="aprovacao">Candidato Aprovado?</label>
+								<select name="aprovacao" class="form-control" id="aprovacao">
+									<option value="" selected disabled>Selecione uma Opção</option>
+									<option value="1">Sim</option>
+									<option value="2">Não</option>
+								</select>
+							</div>
+
+							<div class="col-md-2" id="stats">
+								<label for="status">Documentos Entregues?</label>
+								<select name="status" class="form-control" id="status">
+									<option value="" selected disabled>Selecione uma Opção</option>
+									<option value="1">Sim</option>
+									<option value="2">Não</option>
+								</select>
 							</div>
 						</div>
 					</div>
@@ -367,35 +406,6 @@
 							<div class="col-md-6">
 								<label for="Detalhes">Atividades a Serem Desenvolvidas no Estágio:</label>
 								<textarea rows="5" name="Detalhes" id="Detalhes" class="form-control"></textarea>
-							</div>
-						</div>
-
-						<div class="form-group row">
-							<div class="col-md-2" id="disp">
-								<label for="disponivel">Possui Candidatos Prévios?</label>
-								<select name="disponivel" class="form-control" id="disponivel">
-									<option value="" selected disabled>Selecione uma Opção</option>
-									<option value="1">Sim</option>
-									<option value="2">Não</option>
-								</select>
-							</div>
-
-							<div class="col-md-2" id="aprov">
-								<label for="aprovacao">Candidato Aprovado?</label>
-								<select name="aprovacao" class="form-control" id="aprovacao">
-									<option value="" selected disabled>Selecione uma Opção</option>
-									<option value="1">Sim</option>
-									<option value="2">Não</option>
-								</select>
-							</div>
-
-							<div class="col-md-2" id="stats">
-								<label for="status">Documentos Entregues?</label>
-								<select name="status" class="form-control" id="status">
-									<option value="" selected disabled>Selecione uma Opção</option>
-									<option value="1">Sim</option>
-									<option value="2">Não</option>
-								</select>
 							</div>
 						</div>
 					</div>
@@ -790,63 +800,6 @@
 	}
 	painelHide();
 
-	function email(atv) {
-		// atv = atividade
-		console.log(' -------------------*** ** ** * * * 1')
-		// gestorDesc = document.getElementById('gestorResp').value
-		// console.log(gestorDesc)
-		solictDesc = document.getElementById('cmb_NomeSolicitante').value
-		console.log(solictDesc)
-		solIn = window.parent.ECM.workflowView.processDefinition.processInstanceId;
-		console.log(solIn)
-		// LinKiM = 'https://myweb.am.sebrae.com.br/portal/p/1/pageworkflowview?app_ecm_workflowview_detailsProcessInstanceID=' + solIn;
-		LinKiM = 'https://mywebhm.am.sebrae.com.br/portal/p/1/pageworkflowview?app_ecm_workflowview_detailsProcessInstanceID=' + solIn;
-		console.log(' -------------------*** ** ** * * * 2')
-		dsMail = DatasetFactory.getDataset("colleague", null, null, null).values;
-		eMailIn = 0;
-		// nameGest = 0;
-		nameSoli = 0;
-		// for (i = 0; i < dsMail.length; i++) {
-		// 	if (dsMail[i]['colleaguePK.colleagueId'] == gestorDesc) {
-		// 		nameGest = dsMail[i]['colleagueName'];
-		// 	}
-		// }
-		for (i = 0; i < dsMail.length; i++) {
-			if (dsMail[i]['colleaguePK.colleagueId'] == solictDesc) {
-				eMailIn = dsMail[i]['mail'];
-				nameSoli = dsMail[i]['colleagueName'];
-			}
-		}
-		console.log(' -------------------*** ** ** * * * 3')
-		// console.log(nameGest)
-		console.log(eMailIn)
-		console.log(nameSoli)
-		var settings = {
-			"url": "https://mywebhm.am.sebrae.com.br/api/public/alert/customEmailSender",
-			"method": "POST",
-			"timeout": 20000,
-			"headers": {
-				"Content-Type": "application/json"
-			},
-			"data": JSON.stringify({
-				"to": eMailIn,
-				"from": "intranet.am@am.sebrae.com.br",
-				"subject": "Solicitação de Serviços UAJUR - MYWEB",
-				"templateId": "novaSolicitação",
-				"dialectId": "pt_BR",
-				"param": {
-					"GESTOR": nameSoli,
-					"NUMERO": solIn,
-					"LINK": LinKiM
-				}
-			}),
-		};
-
-		$.ajax(settings).done(function (response) {
-			console.log(response);
-		});
-
-	}
 </script>
 
 <style>

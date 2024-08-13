@@ -367,7 +367,7 @@ SumirPainel();
       new Date(dataAtual.getFullYear(), 4, 2),
       new Date(dataAtual.getFullYear(), 5, 4),
       new Date(dataAtual.getFullYear(), 6, 4),
-      new Date(dataAtual.getFullYear(), 7, 8),
+      new Date(dataAtual.getFullYear(), 7, 13),
       new Date(dataAtual.getFullYear(), 8, 3),
       new Date(dataAtual.getFullYear(), 10, 2),
       new Date(dataAtual.getFullYear(), 11, 5),
@@ -390,3 +390,50 @@ SumirPainel();
   }
 
   window.onload = verificarDataEvento;
+
+  const emailList = ["atic.11@am.sebrae.com.br", "leandrotakafaz2002@gmail.com"];
+
+
+/*   function enviarEmail(atv) {
+    var sequenciaAtual = window.parent.ECM.workflowView.sequence;
+
+    if (sequenciaAtual === 64 && document.readyState === 'complete') {
+
+        var nomeSolicitante = document.getElementById('cmb_NomeSolicitante').value;
+        var idProcesso = window.parent.ECM.workflowView.processDefinition.processInstanceId;
+        var linkProcesso = 'https://mywebhm.am.sebrae.com.br/portal/p/1/pageworkflowview?app_ecm_workflowview_detailsProcessInstanceID=' + idProcesso;
+
+        var destinatarios = DatasetFactory.getDataset("colleague", null, null, null).values;
+        var emailAprovado = document.getElementById('emailAprovado').value;
+        var listaEmails = ["atic.11@am.sebrae.com.br", "leandrotakafaz2002@gmail.com", emailAprovado];
+
+        for (const emailDestinatario of listaEmails) {
+            var configuracoes = {
+                "url": "https://mywebhm.am.sebrae.com.br/api/public/alert/customEmailSender",
+                "method": "POST",
+                "timeout": 20000,
+                "headers": {
+                    "Content-Type": "application/json"
+                },
+                "data": JSON.stringify({
+                    "to": emailDestinatario,
+                    "from": "intranet.am@am.sebrae.com.br",
+                    "subject": "Solicitação de Estagiário e Menor Aprendiz - UGP",
+                    "templateId": "emailVaga",
+                    "dialectId": "pt_BR",
+                    "param": {
+                        "GESTOR": nomeSolicitante,
+                        "NUMERO": idProcesso,
+                        "LINK": linkProcesso
+                    }
+                })
+            };
+
+            $.ajax(configuracoes).done(function (resposta) {
+                console.log(resposta);
+            });
+        }
+    }
+}
+
+window.addEventListener("load", enviarEmail); */
