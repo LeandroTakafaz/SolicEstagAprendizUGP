@@ -357,6 +357,10 @@ SumirPainel();
     loadCSS("seu_arquivo.css");
  }; */
 
+ var sequenciaAtual = window.parent.ECM.workflowView.sequence;
+
+ if (sequenciaAtual === 0 || sequenciaAtual === 4 /*  && document.readyState === 'complete' */) {
+
  function verificarDataEvento() {
     const dataAtual = new Date();
     const datasFixas = [
@@ -367,14 +371,13 @@ SumirPainel();
       new Date(dataAtual.getFullYear(), 4, 2),
       new Date(dataAtual.getFullYear(), 5, 4),
       new Date(dataAtual.getFullYear(), 6, 4),
-      new Date(dataAtual.getFullYear(), 7, 13),
+      new Date(dataAtual.getFullYear(), 7, 14),
       new Date(dataAtual.getFullYear(), 8, 3),
       new Date(dataAtual.getFullYear(), 10, 2),
-      new Date(dataAtual.getFullYear(), 11, 5),
       new Date(dataAtual.getFullYear(), 11, 5)
     ];
     const apagaTudo = document.getElementById("amostradinho");
-    const card = document.getElementById("cardInfo");
+    const card = document.getElementById("some");
   
     let mostrarApagaTudo = false;
   
@@ -388,6 +391,8 @@ SumirPainel();
     apagaTudo.style.display = mostrarApagaTudo ? "block" : "none";
     card.style.display = mostrarApagaTudo ? "none" : "block";
   }
+
+}
 
   window.onload = verificarDataEvento;
 

@@ -100,7 +100,7 @@
 							</div>
 
 							<div class="col-md-3" id="UnidadeSolicita">
-								<label for="zm_UnidadeSolicitante">Unidade Solicitante</label> 
+								<label for="zm_UnidadeSolicitante">Unidade Solicitante</label>
 								<input type="text" class="form-control" name="cmb_UnidadeSolicitante"
 									id="cmb_UnidadeSolicitante" readonly>
 							</div>
@@ -156,10 +156,65 @@
 						<h3 class="panel-title">Protocolo de Itens</h3>
 					</div>
 
-					<div class="panel-body">
-						<div class="form-group row">
-							<div class="col-md-2">
+					<div class="form-group row">
+						<div class="panel-body col-md-6">
+							<div class="form-group row">
+								<div class="col-md-12">
+									<label for="servicoUMP">Material Necessário:</label><br>
+									<div class="checkbox-inline">
+										<input type="checkbox" id="Cadeira" name="Cadeira">
+										<label for="Cadeira">Cadeiraﾠﾠ</label>
+									</div>
+									<div class="checkbox-inline">
+										<input type="checkbox" id="Mesa" name="Mesa">
+										<label for="Mesa">Aparelho Eletrônicoﾠﾠ</label>
+									</div>
+									<div class="checkbox-inline">
+										<input type="checkbox" id="Gaveteiro" name="Gaveteiro">
+										<label for="Gaveteiro">Gaveteiroﾠﾠﾠﾠﾠﾠ</label>
+									</div>
+									<div class="checkbox-inline">
+										<input type="checkbox" id="Aparelho" name="Aparelho">
+										<label for="Aparelho">Mesa</label>
+									</div>
+									<br>
+									<div class="checkbox-inline">
+										<input type="checkbox" id="Notebook" name="Notebook">
+										<label for="Notebook">Notebook</label>
+									</div>
+									<div class="checkbox-inline">
+										<input type="checkbox" id="Computer" name="Computer">
+										<label for="Computer">Computador de Mesa</label>
+									</div>
+									<div class="checkbox-inline">
+										<input type="checkbox" id="Kit" name="Kit">
+										<label for="Kit">Mouse e Teclado</label>
+									</div>
+									<div class="checkbox-inline">
+										<input type="checkbox" id="Outros" name="Outros">
+										<label for="Outros">Outros</label>
+									</div>
+								</div>
+							</div>
 
+							<div class="form-group row">
+								<div class="col-md-12">
+									<label for="descUMP">Descrição da Solicitação:</label>
+									<textarea class="form-control" rows="5" name="descUMP" id="descUMP"></textarea>
+								</div>
+							</div>
+						</div>
+
+						<div class="panel-body col-md-6">
+							<div class="card">
+								<div class="card-body">
+									<h1 class="card-title">
+										Atenção:
+									</h1>
+									<h4 class="card-text">1 - Escolher apenas Materiais faltantes para o novo colaborador, caso seja uma substituição e não seja necessário equipamentos, naõ é necessário marcação.</h4>
+									<h4 class="card-text">2 - Com o avanço da solicitação você receberá um e-mail para assinatura de responsabilização pelos equipamentos fornecidos.</h4>
+									<h4 class="card-text">3 - Caso não haja algum dos itens listados como necessários para o estagiário, haverá a obrigatoriedade de passar pela diretoria para deliberar sobre o pedido.</h4>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -730,7 +785,8 @@
 			</div>
 
 			<!-- Inicio da Seção do Card de Informações -->
-			<div class="panel-body col-md-6" id="some" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+			<div class="panel-body col-md-6" id="some"
+				style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
 				<div class="card" id="cardInfo">
 					<div class="card-body">
 						<h1 class="card-title">
@@ -835,7 +891,7 @@
 		color: #00df89;
 		transition: transform 0.3s ease;
 	}
-	
+
 	#addItem:hover {
 		border: 2px solid #0fbd7a;
 		background-color: #0fbd7a;
