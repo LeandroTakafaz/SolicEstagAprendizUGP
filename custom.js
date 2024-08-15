@@ -306,6 +306,7 @@ function fnCustomDelete(elem) {
     fnWdkRemoveChild(elem);
 }
 
+/* Não lembro o que isso faz, mas, melhor não mexer, ocasionou bug da última vez */
 $(document).ready(function () {
     $('#myTab a').click(function (e) {
         e.preventDefault();
@@ -354,7 +355,7 @@ SumirPainel();
  }
  
  window.onload = function() {
-    loadCSS("seu_arquivo.css");
+    loadCSS("style.css");
  }; */
 
  var sequenciaAtual = window.parent.ECM.workflowView.sequence;
@@ -371,7 +372,7 @@ SumirPainel();
       new Date(dataAtual.getFullYear(), 4, 2),
       new Date(dataAtual.getFullYear(), 5, 4),
       new Date(dataAtual.getFullYear(), 6, 4),
-      new Date(dataAtual.getFullYear(), 7, 14),
+      new Date(dataAtual.getFullYear(), 7, 15),
       new Date(dataAtual.getFullYear(), 8, 3),
       new Date(dataAtual.getFullYear(), 10, 2),
       new Date(dataAtual.getFullYear(), 11, 5)
@@ -396,10 +397,10 @@ SumirPainel();
 
   window.onload = verificarDataEvento;
 
-  const emailList = ["atic.11@am.sebrae.com.br", "leandrotakafaz2002@gmail.com"];
+/*  const emailList = ["atic.11@am.sebrae.com.br", "leandrotakafaz2002@gmail.com"];
 
 
-/*   function enviarEmail(atv) {
+   function enviarEmail(atv) {
     var sequenciaAtual = window.parent.ECM.workflowView.sequence;
 
     if (sequenciaAtual === 64 && document.readyState === 'complete') {
