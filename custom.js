@@ -372,7 +372,7 @@ SumirPainel();
       new Date(dataAtual.getFullYear(), 4, 2),
       new Date(dataAtual.getFullYear(), 5, 4),
       new Date(dataAtual.getFullYear(), 6, 4),
-      new Date(dataAtual.getFullYear(), 7, 15),
+      new Date(dataAtual.getFullYear(), 7, 19),
       new Date(dataAtual.getFullYear(), 8, 3),
       new Date(dataAtual.getFullYear(), 10, 2),
       new Date(dataAtual.getFullYear(), 11, 5)

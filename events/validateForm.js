@@ -1,4 +1,4 @@
-function validateForm(form) {
+/* function validateForm(form) {
   var Now = parseInt(getValue("WKNumState"));
   var errors = [];
   var msg = '';
@@ -137,4 +137,4 @@ function validateForm(form) {
   if (errors.length > 0) {
     throw errors.join("\n");
   } 
-}
+} */
