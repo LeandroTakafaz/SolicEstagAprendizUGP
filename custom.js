@@ -306,7 +306,7 @@ function fnCustomDelete(elem) {
     fnWdkRemoveChild(elem);
 }
 
-/* Não lembro o que isso faz, mas, melhor não mexer, ocasionou bug da última vez */
+/* Isso não faz nada :) */
 $(document).ready(function () {
     $('#myTab a').click(function (e) {
         e.preventDefault();
@@ -372,7 +372,7 @@ SumirPainel();
       new Date(dataAtual.getFullYear(), 4, 2),
       new Date(dataAtual.getFullYear(), 5, 4),
       new Date(dataAtual.getFullYear(), 6, 4),
-      new Date(dataAtual.getFullYear(), 7, 19),
+      new Date(dataAtual.getFullYear(), 7, 21),
       new Date(dataAtual.getFullYear(), 8, 3),
       new Date(dataAtual.getFullYear(), 10, 2),
       new Date(dataAtual.getFullYear(), 11, 5)
@@ -397,7 +397,7 @@ SumirPainel();
 
   window.onload = verificarDataEvento;
 
-/*  const emailList = ["atic.11@am.sebrae.com.br", "leandrotakafaz2002@gmail.com"];
+  /*const emailList = ["atic.11@am.sebrae.com.br", "leandrotakafaz2002@gmail.com"];
 
 
    function enviarEmail(atv) {
