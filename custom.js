@@ -64,32 +64,6 @@ function getSuper() {
 }
 window.addEventListener("load", setSuper)
 
-
-function BloquearCampos() {
-
-    var EnsinoSelect = document.getElementById("typeEnsino");
-    var serieSelect = document.getElementById("someSerie");
-    var periodoSelect = document.getElementById("somePeriodo");
-
-    
-    if (EnsinoSelect.value === "medio") {
-        periodoSelect.style.display = "none";
-        serieSelect.style.display = "block";
-
-    } else if (EnsinoSelect.value === "superior") {
-        periodoSelect.style.display = "block";
-        serieSelect.style.display = "none";
-
-    }  else if (EnsinoSelect.value === "selecione"){
-        periodoSelect.style.display = "none";
-        serieSelect.style.display = "none";
-    }
-}
-
-var EnsinoSelect = document.getElementById("typeEnsino");
-EnsinoSelect.addEventListener("change", BloquearCampos);
-BloquearCampos();
-
 function SumirCampo() {
 
     var VagaSelect = document.getElementById("vaga");
@@ -306,57 +280,6 @@ function fnCustomDelete(elem) {
     fnWdkRemoveChild(elem);
 }
 
-/* Isso não faz nada :) */
-$(document).ready(function () {
-    $('#myTab a').click(function (e) {
-        e.preventDefault();
-        $(this).tab('show');
-    });
-});
-
-
-function SumirPainel() {
-
-    var VagaSelect = document.getElementById("estiloVaga");
-    var jovemSelect = document.getElementById("somePainelJov");
-    var empSelect = document.getElementById("somePainelEmp");
-    var estagSelect = document.getElementById("somePainelEstag");
-
-    
-    if (VagaSelect.value === "0") {
-        jovemSelect.style.display = "none";
-        empSelect.style.display = "none";
-        estagSelect.style.display = "none";
-
-    } else if (VagaSelect.value === "1") {
-        jovemSelect.style.display = "none";
-        empSelect.style.display = "none";
-        estagSelect.style.display = "block";
-
-    }  else if (VagaSelect.value === "2"){
-        jovemSelect.style.display = "block";
-        empSelect.style.display = "block";
-        estagSelect.style.display = "none";
-    }
-}
-
-var VagaSelect = document.getElementById("estiloVaga");
-VagaSelect.addEventListener("change", SumirPainel);
-SumirPainel();
-
-/* function loadCSS(filename) { 
-
-    var file = document.createElement("link");
-    file.setAttribute("rel", "stylesheet");
-    file.setAttribute("type", "text/css");
-    file.setAttribute("href", filename);
- 
-    document.head.appendChild(file);
- }
- 
- window.onload = function() {
-    loadCSS("style.css");
- }; */
 
  var sequenciaAtual = window.parent.ECM.workflowView.sequence;
 
@@ -365,21 +288,22 @@ SumirPainel();
  function verificarDataEvento() {
     const dataAtual = new Date();
     const datasFixas = [
-      new Date(dataAtual.getFullYear(), 0, 5),
-      new Date(dataAtual.getFullYear(), 1, 2),
-      new Date(dataAtual.getFullYear(), 2, 1),
-      new Date(dataAtual.getFullYear(), 3, 2),
-      new Date(dataAtual.getFullYear(), 4, 2),
+      new Date(dataAtual.getFullYear(), 0, 30),
+      new Date(dataAtual.getFullYear(), 1, 27),
+      new Date(dataAtual.getFullYear(), 2, 6),
+      new Date(dataAtual.getFullYear(), 3, 4),
+      new Date(dataAtual.getFullYear(), 4, 8),
       new Date(dataAtual.getFullYear(), 5, 4),
       new Date(dataAtual.getFullYear(), 6, 4),
-      new Date(dataAtual.getFullYear(), 7, 21),
+      new Date(dataAtual.getFullYear(), 7, 1),
       new Date(dataAtual.getFullYear(), 8, 3),
-      new Date(dataAtual.getFullYear(), 10, 2),
-      new Date(dataAtual.getFullYear(), 11, 5)
+      new Date(dataAtual.getFullYear(), 8, 1),
+      new Date(dataAtual.getFullYear(), 10, 5),
+      new Date(dataAtual.getFullYear(), 11, 1)
     ];
-    const apagaTudo = document.getElementById("amostradinho");
+    const apagaTudo = document.getElementById("amostradinho"); 
     const card = document.getElementById("some");
-  
+
     let mostrarApagaTudo = false;
   
     datasFixas.forEach(dataFixa => {

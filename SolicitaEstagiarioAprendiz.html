@@ -7,11 +7,8 @@
 	<script type="text/javascript" src="/portal/resources/js/mustache/mustache-min.js"></script>
 	<script type="text/javascript" src="/style-guide/js/fluig-style-guide.min.js" charset="utf-8"></script>
 	<script type="text/javascript" src="/webdesk/vcXMLRPC.js"></script>
-	<script async src="custom.js"></script>
-	<script async src="tabela.js"></script>
 	<meta charset="utf-8">
 	<link rel="stylesheet" href="./style.css">
-	<script type="text/javascript" src="slc_dotacao.js"></script>
 </head>
 
 <body>
@@ -26,9 +23,7 @@
 					<div class="panel panel-default" id="somePainelCabeça">
 						<div class="panel-heading" id="painel_cabecalho">
 							<div align="center" class="panel-title">
-								<h1><i class="fluigicon fluigicon-desktop icon-md" aria-hidden="true"></i> Solicitação
-									de
-									Estagiário e Menor Aprendiz</h1>
+								<h1><i class="fluigicon fluigicon-desktop icon-md" aria-hidden="true"></i> Solicitação de Contratação de Estagiários</h1>
 							</div>
 						</div>
 					</div>
@@ -39,7 +34,7 @@
 				<!-- Painel do Requisitante -->
 
 				<input type="hidden" class="form-control" name="arrSigners" id="arrSigners" readonly
-				value="" />
+				value=""/>
 
 				<div class="panel panel-default" id="somePainelReq">
 					<div class="panel-heading" id="painel_req">
@@ -71,28 +66,9 @@
 								<label for="numProcesso">Numero da Solicitação</label>
 								<input type="text" class="form-control" name="numProcesso" id="numProcesso" readonly>
 							</div>
-
-							<div class="col-md-3">
-								<label for="mail">Email da IEL</label>
-								<input type="text" class="form-control" name="mail" id="mail">
-							</div>
-
-							<div class="col-md-3" id="linkSome">
-								<label for="linkPublicForm">Link IEL</label>
-								<input type="text" class="form-control" name="linkPublicForm" id="linkPublicForm">
-							</div>
 						</div>
 
 						<div class="form-group row">
-							<div class="col-md-2">
-								<label for="estiloVaga">Será Qual tipo de Contrato?</label>
-								<select name="estiloVaga" class="form-control" id="estiloVaga">
-									<option value="0" selected disabled>Selecione uma Opção</option>
-									<option value="1">Estágio</option>
-									<option value="2">Menor Aprendiz</option>
-								</select>
-							</div>
-
 							<div class="col-md-2">
 								<label for="vaga">Substituto ou Nova Vaga?</label>
 								<select name="vaga" id="vaga" class="form-control">
@@ -223,161 +199,6 @@
 					</div>
 				</div>
 
-				<!-- Painel de Dados da Empresa -->
-
-				<div class="panel panel-default" id="somePainelEmp">
-					<div class="panel-heading" id="painel_empresa">
-						<h3 class="panel-title"><i class="flaticon flaticon-desktop-list icon-md"
-								aria-hidden="true"></i>
-							Dados da Empresa</h3>
-					</div>
-
-					<div class="panel-body">
-						<div class="form-group row">
-							<div class="col-md-2">
-								<label for="empresaUnidade">Empresa / Unidade:</label>
-								<input type="text" class="form-control" name="empresaUnidade" id="empresaUnidade">
-							</div>
-
-							<div class="col-md-2">
-								<label for="cnpj">CNPJ:</label>
-								<input type="number" class="form-control" name="cnpj" id="cnpj">
-							</div>
-
-							<div class="col-md-2">
-								<label for="endereco">Endereço:</label>
-								<input type="text" class="form-control" name="endereco" id="endereco">
-							</div>
-
-							<div class="col-md-2">
-								<label for="requisitanteVaga">Requisitante da Vaga:</label>
-								<select name="requisitanteVaga" id="requisitanteVaga" dataset="colleague"
-									datasetkey="colleagueId" datasetvalue="colleagueName" class="form-control">
-								</select>
-							</div>
-
-							<div class="col-md-2">
-								<label for="cargo">Cargo:</label>
-								<input type="text" class="form-control" name="cargo" id="cargo">
-							</div>
-						</div>
-						<div class="form-group row">
-							<div class="col-md-2">
-								<label for="departamento">Departamento:</label>
-								<input type="text" class="form-control" name="departamento" id="departamento">
-							</div>
-
-							<div class="col-md-2">
-								<label for="setorAprendiz">Setor:</label>
-								<input type="text" class="form-control" name="setorAprendiz" id="setorAprendiz">
-							</div>
-
-							<div class="col-md-2">
-								<label for="telefone">Telefone:</label>
-								<input type="number" class="form-control" name="telefone" id="telefone">
-							</div>
-
-							<div class="col-md-3">
-								<label for="emailEmp">E-mail:</label>
-								<input type="email" class="form-control" name="emailEmp" id="emailEmp">
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<!-- Fim do Painel -->
-
-				<!-- Painel de Dados do Jovem Aprendiz -->
-
-				<div class="panel panel-default" id="somePainelJov">
-					<div class="panel-heading" id="painel_jovem">
-						<h3 class="panel-title">Dados da Oportunidade de Jovem Aprendiz</h3>
-					</div>
-
-					<div class="panel-body">
-						<div class="form-group row">
-							<div class="col-md-2">
-								<label for="salario">Qual será o Salário?</label>
-								<input type="number" class="form-control" name="salario" id="salario">
-							</div>
-
-							<div class="col-md-2">
-								<label for="sexo">Qual o requisito de sexo?</label>
-								<select class="form-control" name="sexo" id="sexo">
-									<option value="selec" selected disabled>Selecione uma Opção</option>
-									<option value="masc">Masculino</option>
-									<option value="femi">Feminino</option>
-									<option value="nemTem">Não se aplica</option>
-								</select>
-							</div>
-
-							<div class="col-md-2">
-								<label for="supervisorAprendiz">Supervisor Responsável</label>
-								<select name="supervisorAprendiz" id="supervisorAprendiz" dataset="colleague"
-									datasetkey="colleagueId" datasetvalue="colleagueName" class="form-control">
-								</select>
-							</div>
-
-							<div class="col-md-2">
-								<label for="cargoSupervisor">Cargo do Supervisor:</label>
-								<input type="text" class="form-control" name="cargoSupervisor" id="cargoSupervisor">
-							</div>
-
-							<div class="col-md-1">
-								<label for="numVagas">Nº de Vagas:</label>
-								<input type="number" class="form-control" name="numVagas" id="numVagas">
-							</div>
-
-							<div class="col-md-1">
-								<label for="entradaAprendiz">Entrada:</label>
-								<input type="time" class="form-control" name="entradaAprendiz" id="entradaAprendiz">
-							</div>
-
-							<div class="col-md-1">
-								<label for="saidaAprendiz">Saída:</label>
-								<input type="time" class="form-control" name="saidaAprendiz" id="saidaAprendiz">
-							</div>
-						</div>
-
-						<div class="form-group row">
-							<div class="col-md-2">
-								<label for="localEntrevista">Local da Entrevista:</label>
-								<input type="text" class="form-control" name="localEntrevista" id="localEntrevista">
-							</div>
-
-							<div class="col-md-2">
-								<label for="pontoReferencia">Ponto de Referência:</label>
-								<input type="text" class="form-control" name="pontoReferencia" id="pontoReferencia">
-							</div>
-
-							<div class="col-md-2">
-								<label for="busca">Procurar por:</label>
-								<input type="text" class="form-control" name="busca" id="busca">
-							</div>
-
-							<div class="col-md-2">
-								<label for="setor">Setor de Atuação:</label>
-								<input type="text" class="form-control" name="setor" id="setor">
-							</div>
-
-							<div class="col-md-1">
-								<label for="idade">Idade Mínima:</label>
-								<input type="text" class="form-control" name="idade" id="idade">
-							</div>
-						</div>
-						<div class="form-group row">
-							<div class="col-md-3">
-								<label for="atividade">Principais Atividades Executadas:</label>
-								<textarea class="form-control" rows="5" name="atividade" id="atividade"></textarea>
-							</div>
-							<div class="col-md-3">
-								<label for="obsAprendiz">Observações:</label>
-								<textarea class="form-control" rows="5" name="obsAprendiz" id="obsAprendiz"></textarea>
-							</div>
-						</div>
-					</div>
-				</div>
-
 				<!-- Fim do Painel -->
 
 				<!-- Painel da Oportunidade de Estágio -->
@@ -412,20 +233,6 @@
 							<div class="col-md-1" id="turnoSaida">
 								<label for="finalTurno">Saída:</label>
 								<input type="time" class="form-control" name="finalTurno" id="finalTurno">
-							</div>
-
-							<div class="col-md-2">
-								<label for="tipoEnsino">Cursando:</label>
-								<select class="form-control" name="typeEnsino" id="typeEnsino">
-									<option value="selecione" selected disabled>Selecione uma Opção</option>
-									<option value="medio">Ensino Médio</option>
-									<option value="superior">Ensino Superior</option>
-								</select>
-							</div>
-
-							<div class="col-md-1" id="someSerie">
-								<label for="serie">Série:</label>
-								<input type="number" class="form-control" name="serie" id="serie">
 							</div>
 
 							<div class="col-md-1" id="somePeriodo">
@@ -809,29 +616,29 @@
 										<h3>Datas para Solicitação:</h3>
 									</strong></li>
 								<ol>
-									<li><strong>Dia 05 de Janeiro de 2024.</strong>
+									<li><strong>Dia 05 de Janeiro de 2025.</strong>
 									</li><br>
-									<li><strong>Dia 02 de Fevereiro de 2024.</strong>
+									<li><strong>Dia 02 de Fevereiro de 2025.</strong>
 									</li><br>
-									<li><strong>Dia 01 de Março de 2024.</strong>
+									<li><strong>Dia 01 de Março de 2025.</strong>
 									</li><br>
-									<li><strong>Dia 02 de Abril de 2024.</strong>
+									<li><strong>Dia 02 de Abril de 2025.</strong>
 									</li><br>
-									<li><strong>Dia 02 de Maio de 2024.</strong>
+									<li><strong>Dia 02 de Maio de 2025.</strong>
 									</li><br>
-									<li><strong>Dia 04 de Junho de 2024.</strong>
+									<li><strong>Dia 04 de Junho de 2025.</strong>
 									</li><br>
-									<li><strong>Dia 02 de Julho de 2024.</strong>
+									<li><strong>Dia 02 de Julho de 2025.</strong>
 									</li><br>
-									<li><strong>Dia 02 de Agosto de 2024.</strong>
+									<li><strong>Dia 02 de Agosto de 2025.</strong>
 									</li><br>
-									<li><strong>Dia 03 de Setembro de 2024.</strong>
+									<li><strong>Dia 03 de Setembro de 2025.</strong>
 									</li><br>
-									<li><strong>Dia 02 de Outubro de 2024.</strong>
+									<li><strong>Dia 02 de Outubro de 2025.</strong>
 									</li><br>
-									<li><strong>Dia 05 de Novembro de 2024.</strong>
+									<li><strong>Dia 05 de Novembro de 2025.</strong>
 									</li><br>
-									<li><strong>Dia 05 de Dezembro de 2024.</strong>
+									<li><strong>Dia 05 de Dezembro de 2025.</strong>
 									</li>
 								</ol>
 							</div>
@@ -848,7 +655,7 @@
 
 <script>
 	function painelHide() {
-		var panel = ["painel_cabecalho", "somePainelReq", "somePainelEmp", "somePainelEstag", "somePainelJov", "somePainelDetalhes"];
+		var panel = ["painel_cabecalho", "somePainelReq", "somePainelEmp", "somePainelEstag", "somePainelJov"];
 
 		if (parent.WCMAPI.getUserLogin() == null) {
 			for (var i = 0; i < panel.length; i++) {
@@ -859,9 +666,10 @@
 		}
 	}
 	painelHide();
-
 </script>
-
+<script type="text/javascript" src="slc_dotacao.js"></script>
+<script async src="custom.js"></script>
+<script async src="tabela.js"></script>
 <style>
 	.panel-heading {
 		background: linear-gradient(to right, #00df89, #00df89);

@@ -21,7 +21,7 @@ function displayFields(form,customHTML){
         default:
     }
 
-    if (Now == 0 || Now == 4 || Now == 7 || Now == 12 || Now == 15 || Now == 31 || Now == 33 || Now == 35 || Now == 68 || Now == 70 || Now == 74 || Now == 76 || Now == 78 || Now == 80 || Now == 92) {
+    if (Now == 0 || Now == 4 || Now == 7 || Now == 12 || Now == 15 || Now == 31 || Now == 33 || Now == 35 || Now == 68 || Now == 70 || Now == 74 || Now == 76 || Now == 78 || Now == 80 || Now == 92 || Now == 99) {
         form.setVisibleById("disp", false);
         form.setVisibleById("aprov", false);
         form.setVisibleById("emailAprov", false);
@@ -43,21 +43,29 @@ function displayFields(form,customHTML){
         form.setVisibleById("aprov", false);
     }
 
-    if (Now == 0 || Now == 4 || Now == 7 || Now == 12 || Now == 15 || Now == 31 || Now == 68 || Now == 70 || Now == 74 || Now == 76 || Now == 78 || Now == 80 || Now == 92) {
+    if (Now == 0 || Now == 4 || Now == 7 || Now == 12 || Now == 15 || Now == 31 || Now == 68 || Now == 70 || Now == 74 || Now == 76 || Now == 78 || Now == 80 || Now == 92 || Now == 99) {
         form.setVisibleById("linkSome", false);
     }
 
-    if (Now == 0 || Now == 4 || Now == 7 || Now == 12 || Now == 15 || Now == 31 || Now == 33 || Now == 35 || Now == 68 || Now == 70 || Now == 74 || Now == 78 || Now == 80) {
+    if (Now == 0 || Now == 4 || Now == 7 || Now == 12 || Now == 15 || Now == 31 || Now == 33 || Now == 35 || Now == 68 || Now == 70 || Now == 74 || Now == 78 || Now == 80 || Now == 99) {
         form.setVisibleById("stats", false);
     }
 
     /* Painel de Detalhes da Solicitação */
-    if (Now == 0 || Now == 4 || Now == 7 || Now == 12 || Now == 15 || Now == 27 || Now == 31 || Now == 33 || Now == 35 || Now == 57 || Now == 64 || Now == 68 || Now == 92){
+    if (Now == 0 || Now == 4 || Now == 7 || Now == 12 || Now == 15 || Now == 27 || Now == 31 || Now == 33 || Now == 35 || Now == 57 || Now == 64 || Now == 68 || Now == 92 || Now == 99){
         form.setVisibleById("somePainelDetalhes", false);
     }
 
-    if (Now == 7 || Now == 12 || Now == 15 || Now == 27 || Now == 31 || Now == 33 || Now == 35 || Now == 57 || Now == 64 || Now == 68 || Now == 70 || Now == 74 || Now == 78 || Now == 80 || Now == 92) {
+    if (Now == 7 || Now == 12 || Now == 15 || Now == 27 || Now == 31 || Now == 33 || Now == 35 || Now == 57 || Now == 64 || Now == 68 || Now == 70 || Now == 74 || Now == 78 || Now == 80 || Now == 92 || Now == 99) {
         form.setVisibleById("some", false);
+    }
+
+    if (Now == 15 || Now == 27 || Now == 31 || Now == 33 || Now == 35 || Now == 57 || Now == 64 || Now == 68 || Now == 70 || Now == 74 || Now == 78 || Now == 80) {
+        form.setVisibleById("somePainelUMP", false);
+    }
+
+    if (Now == 99) {
+        form.setVisibleById("somePainelDetalhes", false);
     }
 
  }

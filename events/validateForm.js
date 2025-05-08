@@ -1,4 +1,4 @@
-/* function validateForm(form) {
+function validateForm(form) {
   var Now = parseInt(getValue("WKNumState"));
   var errors = [];
   var msg = '';
@@ -8,7 +8,7 @@
     return date;
   }
 
-  if (Now == 0 || Now == 4) {
+  if (Now == 0 || Now == 4 && usuario != "20000834") {
     if (form.getValue("estiloVaga") == "0") {
       errors.push("Campo Tipo de Contrato não foi preenchido")
     }
@@ -137,4 +137,4 @@
   if (errors.length > 0) {
     throw errors.join("\n");
   } 
-} */
+}
