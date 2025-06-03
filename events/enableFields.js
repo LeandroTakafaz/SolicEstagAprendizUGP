@@ -12,7 +12,7 @@ function enableFields(form){
             disableAllFields(form)    	
         }
     }
-    else if(Now == 7 || Now == 12 || Now == 15 || Now == 31 || Now == 33 || Now == 35 || Now == 68 || Now == 70 || Now == 74 || Now == 78 || Now == 80){
+    else if(Now == 7 || Now == 12 || Now == 15 || Now == 31 || Now == 33 || Now == 35 || Now == 68 || Now == 70 || Now == 74 || Now == 78 || Now == 80 || Now == 99 || Now == 108){
         disableAllFields(form)
 	}   
     else if(Now == 27) {

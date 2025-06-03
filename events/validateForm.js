@@ -8,7 +8,7 @@ function validateForm(form) {
     return date;
   }
 
-  if (Now == 0 || Now == 4 && usuario != "20000834") {
+  if (Now == 0 || Now == 4) {
     if (form.getValue("estiloVaga") == "0") {
       errors.push("Campo Tipo de Contrato não foi preenchido")
     }

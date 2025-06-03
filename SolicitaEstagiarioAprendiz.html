@@ -16,6 +16,8 @@
 		<form name="form" role="form">
 
 			<input type="hidden" name="hdn_numSuperior" id="hdn_numSuperior">
+			<input type="hidden" name="hdn_tipoServico" id="hdn_tipoServico" value="Inclusão de Novo Usuário">
+			<input type="hidden" name="hdn_perfil" id="hdn_perfil" value="Estagiário">
 
 			<!-- Painel de Cabeçalho -->
 			<div id="amostradinho">
@@ -28,6 +30,42 @@
 						</div>
 					</div>
 				</header>
+
+				<!-- Fim do Painel -->
+
+				<!-- Painel de Avaliação -->
+				 
+				<div class="panel panel-default" id="painel_avaliacao">
+					<div class="panel-heading" id="headingAvaliacao">
+						<h3 class="panel-title">
+							<b>Avaliação do Serviço</b>
+						</h3>
+					</div>
+					<div class="panel-body">
+						<div class="form-group row">
+							<div class="col-md-6">
+								<div class="form-group">
+									<label for="slc_Avalia">Classifique o Atendimento </label>
+									<select class="form-control" name="slc_Avalia" id="slc_Avalia">
+										<option value="">Selecione</option>
+										<option value="Satisfeito ">Satisfeito </option>
+										<option value="Parcialmente Satisfeito">Parcialmente Satisfeito</option>
+										<option value="Insatisfeito ">Insatisfeito</option>
+									</select>
+								</div>
+							</div>
+						</div>
+						<div class="form-group row">
+							<div class="col-md-6">
+								<div class="form-group">
+									<label for="txt_Comentario">Comentário:</label>
+									<textarea class="form-control" rows="4" name="txt_Comentario"
+										id="txt_Comentario"></textarea>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
 
 				<!-- Fim do Painel -->
 
@@ -93,16 +131,6 @@
 									<option value="1">Sim</option>
 									<option value="2">Não</option>
 								</select>
-							</div>
-
-							<div class="col-md-2" id="emailAprov">
-								<label for="emailAprovado">Email do Candidato Aprovado:</label>
-								<input type="text" class="form-control" name="emailAprovado" id="emailAprovado">
-							</div>
-
-							<div class="col-md-3" id="cand">
-								<label for="linkCandidato">Link Candidato</label>
-								<input type="text" class="form-control" name="linkCandidato" id="linkCandidato">
 							</div>
 
 							<div class="col-md-2" id="aprov">
@@ -234,11 +262,6 @@
 								<label for="finalTurno">Saída:</label>
 								<input type="time" class="form-control" name="finalTurno" id="finalTurno">
 							</div>
-
-							<div class="col-md-1" id="somePeriodo">
-								<label for="periodo">Período:</label>
-								<input type="number" class="form-control" name="periodo" id="periodo">
-							</div>
 						</div>
 
 						<div class="form-group row">
@@ -252,6 +275,11 @@
 							<div class="col-md-2">
 								<label for="formacao">Formação/Experiência Profissional:</label>
 								<input type="text" class="form-control" name="formacao" id="formacao">
+							</div>
+
+							<div class="col-md-1" id="somePeriodo">
+								<label for="periodo">Período:</label>
+								<input type="number" class="form-control" name="periodo" id="periodo">
 							</div>
 
 							<div class="col-md-2" id="estagioSub">
@@ -544,13 +572,6 @@
 
 																<input type="hidden" name="txt_codacao"
 																	id="txt_codacao">
-																<div class="col-md-2">
-																	<label for="txt_valorUtil">Valor utilizado :</label>
-																	<input type="text" class="form-control"
-																		name="txt_valorUtil" id="txt_valorUtil"
-																		onchange="formatarMoeda(this);validateValor()">
-
-																</div>
 															</div>
 															<div class="form-group row">
 																<div class="col-md-9" style="display: none;">
