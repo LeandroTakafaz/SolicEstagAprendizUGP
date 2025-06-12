@@ -56,7 +56,7 @@ function displayFields(form,customHTML){
     }
 
     /* Painel de Detalhes da Solicitação */
-    if (Now == 0 || Now == 4 || Now == 7 || Now == 12 || Now == 15 || Now == 27 || Now == 31 || Now == 33 || Now == 35 || Now == 57 || Now == 64 || Now == 68 || Now == 92 || Now == 99 || Now == 108){
+    if (Now == 7 || Now == 12 || Now == 15 || Now == 27 || Now == 31 || Now == 33 || Now == 35 || Now == 57 || Now == 64 || Now == 68 || Now == 92 || Now == 99 || Now == 108){
         form.setVisibleById("somePainelDetalhes", false);
     }
 

@@ -271,7 +271,7 @@ function addRateioz() {
     slcProjeto(linha)
     slcAcao(linha)
     slcUnidade(linha)
-    //insertINP()
+    //insertINP() 
     //insertINPun()
 }
 
@@ -281,9 +281,31 @@ function fnCustomDelete(elem) {
 }
 
 
- var sequenciaAtual = window.parent.ECM.workflowView.sequence;
+var sequenciaAtual = window.parent.ECM.workflowView.sequence;
 
- if (sequenciaAtual === 0 || sequenciaAtual === 4 /*  && document.readyState === 'complete' */) {
+if (sequenciaAtual === 0 || sequenciaAtual === 4 /* && document.readyState === 'complete' */) {
+
+  function verificarDataEvento() {
+    const dataAtual = new Date();
+    const diaAtual = dataAtual.getDate(); 
+
+    const apagaTudo = document.getElementById("amostradinho");
+    const card = document.getElementById("some");
+
+    let mostrarApagaTudo = diaAtual <= 10; 
+
+    apagaTudo.style.display = mostrarApagaTudo ? "block" : "none";
+    card.style.display = mostrarApagaTudo ? "none" : "block";
+  }
+
+}
+
+window.onload = verificarDataEvento;
+
+
+/*    var sequenciaAtual = window.parent.ECM.workflowView.sequence;
+
+ if (sequenciaAtual === 0 || sequenciaAtual === 4 /*  && document.readyState === 'complete' ) {
 
  function verificarDataEvento() {
     const dataAtual = new Date();
@@ -319,7 +341,7 @@ function fnCustomDelete(elem) {
 
 }
 
-  window.onload = verificarDataEvento;
+  window.onload = verificarDataEvento; */
 
   /*const emailList = ["atic.11@am.sebrae.com.br", "leandrotakafaz2002@gmail.com"];
 
